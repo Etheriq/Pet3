@@ -25,6 +25,8 @@
 		2999DDDD207AB99F00D7A792 /* UIView+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2999DDDC207AB99F00D7A792 /* UIView+Extensions.swift */; };
 		2999DDDF207AB9B400D7A792 /* Typealiases.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2999DDDE207AB9B400D7A792 /* Typealiases.swift */; };
 		2999DDE1207AB9D500D7A792 /* Styles.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2999DDE0207AB9D500D7A792 /* Styles.swift */; };
+		2999DDE7207AC6F000D7A792 /* ProductModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2999DDE6207AC6F000D7A792 /* ProductModel.swift */; };
+		2999DDEA207AC90500D7A792 /* ImageSorces.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2999DDE9207AC90500D7A792 /* ImageSorces.swift */; };
 		AF9D5796C9E6D6BE76630CB2 /* Pods_testTask.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 1AE9BCA9E7B6AA20DDB1A947 /* Pods_testTask.framework */; };
 /* End PBXBuildFile section */
 
@@ -51,6 +53,8 @@
 		2999DDDC207AB99F00D7A792 /* UIView+Extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIView+Extensions.swift"; sourceTree = "<group>"; };
 		2999DDDE207AB9B400D7A792 /* Typealiases.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Typealiases.swift; sourceTree = "<group>"; };
 		2999DDE0207AB9D500D7A792 /* Styles.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Styles.swift; sourceTree = "<group>"; };
+		2999DDE6207AC6F000D7A792 /* ProductModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProductModel.swift; sourceTree = "<group>"; };
+		2999DDE9207AC90500D7A792 /* ImageSorces.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ImageSorces.swift; sourceTree = "<group>"; };
 		BA08A2B5D4332249819E9509 /* Pods-testTask.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-testTask.debug.xcconfig"; path = "Pods/Target Support Files/Pods-testTask/Pods-testTask.debug.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -98,6 +102,7 @@
 				2999DDD3207AB7CA00D7A792 /* Modules */,
 				2999DDD4207AB7E200D7A792 /* ReusableViews */,
 				2999DDD2207AB7BE00D7A792 /* Extensions */,
+				2999DDE8207AC8D500D7A792 /* Utilites */,
 				2999DDBB207AB44000D7A792 /* Resources */,
 				2999DDA9207AAD0C00D7A792 /* AppDelegate.swift */,
 				2999DDAD207AAD0D00D7A792 /* Main.storyboard */,
@@ -170,8 +175,49 @@
 		2999DDD5207AB86000D7A792 /* ProductsModule */ = {
 			isa = PBXGroup;
 			children = (
+				2999DDE2207AC69000D7A792 /* ViewModel */,
+				2999DDE4207AC6A700D7A792 /* View */,
+				2999DDE3207AC69C00D7A792 /* Model */,
+				2999DDE5207AC6B100D7A792 /* SectionControllers */,
 			);
 			path = ProductsModule;
+			sourceTree = "<group>";
+		};
+		2999DDE2207AC69000D7A792 /* ViewModel */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = ViewModel;
+			sourceTree = "<group>";
+		};
+		2999DDE3207AC69C00D7A792 /* Model */ = {
+			isa = PBXGroup;
+			children = (
+				2999DDE6207AC6F000D7A792 /* ProductModel.swift */,
+			);
+			path = Model;
+			sourceTree = "<group>";
+		};
+		2999DDE4207AC6A700D7A792 /* View */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = View;
+			sourceTree = "<group>";
+		};
+		2999DDE5207AC6B100D7A792 /* SectionControllers */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = SectionControllers;
+			sourceTree = "<group>";
+		};
+		2999DDE8207AC8D500D7A792 /* Utilites */ = {
+			isa = PBXGroup;
+			children = (
+				2999DDE9207AC90500D7A792 /* ImageSorces.swift */,
+			);
+			path = Utilites;
 			sourceTree = "<group>";
 		};
 		86A41DA9C0D3FE2652AD5CAD /* Pods */ = {
@@ -313,6 +359,8 @@
 				2999DDDF207AB9B400D7A792 /* Typealiases.swift in Sources */,
 				2999DDDD207AB99F00D7A792 /* UIView+Extensions.swift in Sources */,
 				2999DDAA207AAD0C00D7A792 /* AppDelegate.swift in Sources */,
+				2999DDE7207AC6F000D7A792 /* ProductModel.swift in Sources */,
+				2999DDEA207AC90500D7A792 /* ImageSorces.swift in Sources */,
 				2999DDDB207AB97300D7A792 /* UIColor+Extensions.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
