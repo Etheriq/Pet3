@@ -8,10 +8,23 @@
 
 /* Begin PBXBuildFile section */
 		2999DDAA207AAD0C00D7A792 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2999DDA9207AAD0C00D7A792 /* AppDelegate.swift */; };
-		2999DDAC207AAD0D00D7A792 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2999DDAB207AAD0D00D7A792 /* ViewController.swift */; };
 		2999DDAF207AAD0D00D7A792 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 2999DDAD207AAD0D00D7A792 /* Main.storyboard */; };
 		2999DDB1207AAD0E00D7A792 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 2999DDB0207AAD0E00D7A792 /* Assets.xcassets */; };
 		2999DDB4207AAD0E00D7A792 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 2999DDB2207AAD0E00D7A792 /* LaunchScreen.storyboard */; };
+		2999DDC7207AB4C800D7A792 /* Ubuntu-L.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 2999DDBE207AB4C800D7A792 /* Ubuntu-L.ttf */; };
+		2999DDC8207AB4C800D7A792 /* Ubuntu-RI.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 2999DDBF207AB4C800D7A792 /* Ubuntu-RI.ttf */; };
+		2999DDC9207AB4C800D7A792 /* Ubuntu-B.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 2999DDC0207AB4C800D7A792 /* Ubuntu-B.ttf */; };
+		2999DDCA207AB4C800D7A792 /* Ubuntu-BI.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 2999DDC1207AB4C800D7A792 /* Ubuntu-BI.ttf */; };
+		2999DDCB207AB4C800D7A792 /* Ubuntu-M.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 2999DDC2207AB4C800D7A792 /* Ubuntu-M.ttf */; };
+		2999DDCC207AB4C800D7A792 /* Ubuntu-MI.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 2999DDC3207AB4C800D7A792 /* Ubuntu-MI.ttf */; };
+		2999DDCD207AB4C800D7A792 /* Ubuntu-C.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 2999DDC4207AB4C800D7A792 /* Ubuntu-C.ttf */; };
+		2999DDCE207AB4C800D7A792 /* Ubuntu-LI.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 2999DDC5207AB4C800D7A792 /* Ubuntu-LI.ttf */; };
+		2999DDCF207AB4C800D7A792 /* Ubuntu-R.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 2999DDC6207AB4C800D7A792 /* Ubuntu-R.ttf */; };
+		2999DDD7207AB94600D7A792 /* String+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2999DDD6207AB94600D7A792 /* String+Extensions.swift */; };
+		2999DDDB207AB97300D7A792 /* UIColor+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2999DDDA207AB97300D7A792 /* UIColor+Extensions.swift */; };
+		2999DDDD207AB99F00D7A792 /* UIView+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2999DDDC207AB99F00D7A792 /* UIView+Extensions.swift */; };
+		2999DDDF207AB9B400D7A792 /* Typealiases.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2999DDDE207AB9B400D7A792 /* Typealiases.swift */; };
+		2999DDE1207AB9D500D7A792 /* Styles.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2999DDE0207AB9D500D7A792 /* Styles.swift */; };
 		AF9D5796C9E6D6BE76630CB2 /* Pods_testTask.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 1AE9BCA9E7B6AA20DDB1A947 /* Pods_testTask.framework */; };
 /* End PBXBuildFile section */
 
@@ -20,11 +33,24 @@
 		1AE9BCA9E7B6AA20DDB1A947 /* Pods_testTask.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_testTask.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		2999DDA6207AAD0C00D7A792 /* testTask.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = testTask.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		2999DDA9207AAD0C00D7A792 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
-		2999DDAB207AAD0D00D7A792 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
 		2999DDAE207AAD0D00D7A792 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		2999DDB0207AAD0E00D7A792 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		2999DDB3207AAD0E00D7A792 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		2999DDB5207AAD0E00D7A792 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		2999DDBE207AB4C800D7A792 /* Ubuntu-L.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Ubuntu-L.ttf"; sourceTree = "<group>"; };
+		2999DDBF207AB4C800D7A792 /* Ubuntu-RI.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Ubuntu-RI.ttf"; sourceTree = "<group>"; };
+		2999DDC0207AB4C800D7A792 /* Ubuntu-B.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Ubuntu-B.ttf"; sourceTree = "<group>"; };
+		2999DDC1207AB4C800D7A792 /* Ubuntu-BI.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Ubuntu-BI.ttf"; sourceTree = "<group>"; };
+		2999DDC2207AB4C800D7A792 /* Ubuntu-M.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Ubuntu-M.ttf"; sourceTree = "<group>"; };
+		2999DDC3207AB4C800D7A792 /* Ubuntu-MI.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Ubuntu-MI.ttf"; sourceTree = "<group>"; };
+		2999DDC4207AB4C800D7A792 /* Ubuntu-C.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Ubuntu-C.ttf"; sourceTree = "<group>"; };
+		2999DDC5207AB4C800D7A792 /* Ubuntu-LI.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Ubuntu-LI.ttf"; sourceTree = "<group>"; };
+		2999DDC6207AB4C800D7A792 /* Ubuntu-R.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Ubuntu-R.ttf"; sourceTree = "<group>"; };
+		2999DDD6207AB94600D7A792 /* String+Extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "String+Extensions.swift"; sourceTree = "<group>"; };
+		2999DDDA207AB97300D7A792 /* UIColor+Extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIColor+Extensions.swift"; sourceTree = "<group>"; };
+		2999DDDC207AB99F00D7A792 /* UIView+Extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIView+Extensions.swift"; sourceTree = "<group>"; };
+		2999DDDE207AB9B400D7A792 /* Typealiases.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Typealiases.swift; sourceTree = "<group>"; };
+		2999DDE0207AB9D500D7A792 /* Styles.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Styles.swift; sourceTree = "<group>"; };
 		BA08A2B5D4332249819E9509 /* Pods-testTask.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-testTask.debug.xcconfig"; path = "Pods/Target Support Files/Pods-testTask/Pods-testTask.debug.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -69,14 +95,83 @@
 		2999DDA8207AAD0C00D7A792 /* testTask */ = {
 			isa = PBXGroup;
 			children = (
+				2999DDD3207AB7CA00D7A792 /* Modules */,
+				2999DDD4207AB7E200D7A792 /* ReusableViews */,
+				2999DDD2207AB7BE00D7A792 /* Extensions */,
+				2999DDBB207AB44000D7A792 /* Resources */,
 				2999DDA9207AAD0C00D7A792 /* AppDelegate.swift */,
-				2999DDAB207AAD0D00D7A792 /* ViewController.swift */,
 				2999DDAD207AAD0D00D7A792 /* Main.storyboard */,
-				2999DDB0207AAD0E00D7A792 /* Assets.xcassets */,
 				2999DDB2207AAD0E00D7A792 /* LaunchScreen.storyboard */,
-				2999DDB5207AAD0E00D7A792 /* Info.plist */,
 			);
 			path = testTask;
+			sourceTree = "<group>";
+		};
+		2999DDBB207AB44000D7A792 /* Resources */ = {
+			isa = PBXGroup;
+			children = (
+				2999DDB5207AAD0E00D7A792 /* Info.plist */,
+				2999DDBD207AB46100D7A792 /* fonts */,
+				2999DDBC207AB45000D7A792 /* Assets */,
+			);
+			path = Resources;
+			sourceTree = "<group>";
+		};
+		2999DDBC207AB45000D7A792 /* Assets */ = {
+			isa = PBXGroup;
+			children = (
+				2999DDB0207AAD0E00D7A792 /* Assets.xcassets */,
+			);
+			path = Assets;
+			sourceTree = "<group>";
+		};
+		2999DDBD207AB46100D7A792 /* fonts */ = {
+			isa = PBXGroup;
+			children = (
+				2999DDC0207AB4C800D7A792 /* Ubuntu-B.ttf */,
+				2999DDC1207AB4C800D7A792 /* Ubuntu-BI.ttf */,
+				2999DDC4207AB4C800D7A792 /* Ubuntu-C.ttf */,
+				2999DDBE207AB4C800D7A792 /* Ubuntu-L.ttf */,
+				2999DDC5207AB4C800D7A792 /* Ubuntu-LI.ttf */,
+				2999DDC2207AB4C800D7A792 /* Ubuntu-M.ttf */,
+				2999DDC3207AB4C800D7A792 /* Ubuntu-MI.ttf */,
+				2999DDC6207AB4C800D7A792 /* Ubuntu-R.ttf */,
+				2999DDBF207AB4C800D7A792 /* Ubuntu-RI.ttf */,
+			);
+			path = fonts;
+			sourceTree = "<group>";
+		};
+		2999DDD2207AB7BE00D7A792 /* Extensions */ = {
+			isa = PBXGroup;
+			children = (
+				2999DDD6207AB94600D7A792 /* String+Extensions.swift */,
+				2999DDDA207AB97300D7A792 /* UIColor+Extensions.swift */,
+				2999DDDC207AB99F00D7A792 /* UIView+Extensions.swift */,
+				2999DDDE207AB9B400D7A792 /* Typealiases.swift */,
+				2999DDE0207AB9D500D7A792 /* Styles.swift */,
+			);
+			path = Extensions;
+			sourceTree = "<group>";
+		};
+		2999DDD3207AB7CA00D7A792 /* Modules */ = {
+			isa = PBXGroup;
+			children = (
+				2999DDD5207AB86000D7A792 /* ProductsModule */,
+			);
+			path = Modules;
+			sourceTree = "<group>";
+		};
+		2999DDD4207AB7E200D7A792 /* ReusableViews */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = ReusableViews;
+			sourceTree = "<group>";
+		};
+		2999DDD5207AB86000D7A792 /* ProductsModule */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = ProductsModule;
 			sourceTree = "<group>";
 		};
 		86A41DA9C0D3FE2652AD5CAD /* Pods */ = {
@@ -148,7 +243,16 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				2999DDC9207AB4C800D7A792 /* Ubuntu-B.ttf in Resources */,
+				2999DDCD207AB4C800D7A792 /* Ubuntu-C.ttf in Resources */,
+				2999DDCA207AB4C800D7A792 /* Ubuntu-BI.ttf in Resources */,
+				2999DDC7207AB4C800D7A792 /* Ubuntu-L.ttf in Resources */,
+				2999DDC8207AB4C800D7A792 /* Ubuntu-RI.ttf in Resources */,
+				2999DDCE207AB4C800D7A792 /* Ubuntu-LI.ttf in Resources */,
+				2999DDCF207AB4C800D7A792 /* Ubuntu-R.ttf in Resources */,
 				2999DDB4207AAD0E00D7A792 /* LaunchScreen.storyboard in Resources */,
+				2999DDCB207AB4C800D7A792 /* Ubuntu-M.ttf in Resources */,
+				2999DDCC207AB4C800D7A792 /* Ubuntu-MI.ttf in Resources */,
 				2999DDB1207AAD0E00D7A792 /* Assets.xcassets in Resources */,
 				2999DDAF207AAD0D00D7A792 /* Main.storyboard in Resources */,
 			);
@@ -204,8 +308,12 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				2999DDAC207AAD0D00D7A792 /* ViewController.swift in Sources */,
+				2999DDD7207AB94600D7A792 /* String+Extensions.swift in Sources */,
+				2999DDE1207AB9D500D7A792 /* Styles.swift in Sources */,
+				2999DDDF207AB9B400D7A792 /* Typealiases.swift in Sources */,
+				2999DDDD207AB99F00D7A792 /* UIView+Extensions.swift in Sources */,
 				2999DDAA207AAD0C00D7A792 /* AppDelegate.swift in Sources */,
+				2999DDDB207AB97300D7A792 /* UIColor+Extensions.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -352,9 +460,12 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Manual;
 				DEVELOPMENT_TEAM = "";
-				INFOPLIST_FILE = testTask/Info.plist;
+				INFOPLIST_FILE = testTask/Resources/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 10.0;
-				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+				);
 				PRODUCT_BUNDLE_IDENTIFIER = com.yuriy.t.mvvm.test.task.testTask;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				PROVISIONING_PROFILE_SPECIFIER = "";
@@ -370,9 +481,12 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Manual;
 				DEVELOPMENT_TEAM = "";
-				INFOPLIST_FILE = testTask/Info.plist;
+				INFOPLIST_FILE = testTask/Resources/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 10.0;
-				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+				);
 				PRODUCT_BUNDLE_IDENTIFIER = com.yuriy.t.mvvm.test.task.testTask;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				PROVISIONING_PROFILE_SPECIFIER = "";
