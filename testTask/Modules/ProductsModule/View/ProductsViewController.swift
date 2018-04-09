@@ -18,8 +18,7 @@ class ProductsViewController: UIViewController {
     fileprivate var adapter: ListAdapter!
     fileprivate var productListViewModel: ProductListViewModel!
     fileprivate let collectionView: UICollectionView = {
-        let flowLayout = UICollectionViewFlowLayout()
-        flowLayout.scrollDirection = .vertical
+        let flowLayout = ListCollectionViewLayout(stickyHeaders: false, topContentInset: 0, stretchToEdge: false)
         let collectionView =  UICollectionView(frame: .zero, collectionViewLayout: flowLayout)
         collectionView.backgroundColor = Color.SharedColors.white
         
@@ -39,6 +38,12 @@ class ProductsViewController: UIViewController {
     override func viewDidLayoutSubviews() {
         super.viewDidLayoutSubviews()
         collectionView.frame = view.bounds
+//        guard let flowLayout = collectionView.collectionViewLayout as? ListCollectionViewLayout else {
+//            return
+//        }
+//        
+//        flowLayout.invalidateLayout()
+//        adapter.reloadData(completion: nil)
     }
     
     // MARK: - Private functions    

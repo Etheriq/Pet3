@@ -45,6 +45,7 @@
                                     <color key="titleColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                     <color key="titleShadowColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 </state>
+                                <state key="selected" image="placeholder"/>
                                 <connections>
                                     <action selector="selectAction:" destination="gTV-IL-0wX" eventType="touchUpInside" id="e8U-TR-7zo"/>
                                 </connections>
@@ -61,7 +62,7 @@
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" text="Label" textAlignment="justified" lineBreakMode="tailTruncation" numberOfLines="2" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="gp4-N2-yQA" userLabel="productDescriptionLabel">
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" text="Label" lineBreakMode="tailTruncation" numberOfLines="2" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="gp4-N2-yQA" userLabel="productDescriptionLabel">
                                 <rect key="frame" x="0.0" y="329" width="288" height="20.5"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                 <nil key="textColor"/>
@@ -104,4 +105,7 @@
             <point key="canvasLocation" x="44" y="-149"/>
         </collectionViewCell>
     </objects>
+    <resources>
+        <image name="placeholder" width="355" height="266"/>
+    </resources>
 </document>
