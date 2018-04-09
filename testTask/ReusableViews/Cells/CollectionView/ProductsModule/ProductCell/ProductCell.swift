@@ -25,7 +25,6 @@ class ProductCell: UICollectionViewCell {
     // MARK: - Actions
     @IBAction func selectAction(_ sender: UIButton) {
         viewModel.userDidSelectProductButton()
-        selectButton.isSelected = viewModel.state
     }
     
     // MARK: - Private functions
@@ -43,7 +42,6 @@ class ProductCell: UICollectionViewCell {
         priceLabel.attributedText = viewModel.productPriceString
         descriptionLabel.attributedText = viewModel.productDescriptionString
     }
-
 }
 
 // MARK: - ProductViewModelDataUpdater

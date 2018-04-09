@@ -82,7 +82,7 @@ extension ProductViewModel: ProductViewModelProtocol {
         let productDescriptionHeight = productDescriptionString.height(withWidth: width, andNumberOfLines: 2)
         let priceHeight = productPriceString.height(withWidth: width)
         // width = image height
-        let containerTotalHeight = width + priceHeight + productDescriptionHeight + 50
+        let containerTotalHeight = width + priceHeight + productDescriptionHeight + 40
         
         return CGSize(width: contextWidth, height: containerTotalHeight)
     }

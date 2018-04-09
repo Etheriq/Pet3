@@ -12,12 +12,19 @@ import IGListKit
 class ProductsViewController: UIViewController {
 
     // MARK: - Outlets
-    @IBOutlet private weak var collectionView: UICollectionView!
     @IBOutlet private weak var nextBarButtonItem: UIBarButtonItem!
     
     // MARK: - Private properties
     fileprivate var adapter: ListAdapter!
     fileprivate var productListViewModel: ProductListViewModel!
+    fileprivate let collectionView: UICollectionView = {
+        let flowLayout = UICollectionViewFlowLayout()
+        flowLayout.scrollDirection = .vertical
+        let collectionView =  UICollectionView(frame: .zero, collectionViewLayout: flowLayout)
+        collectionView.backgroundColor = Color.SharedColors.white
+        
+        return collectionView
+    }()
     
     // MARK: - Lifecycle
     override func viewDidLoad() {
@@ -26,9 +33,15 @@ class ProductsViewController: UIViewController {
         nextBarButtonItem.isEnabled = false
         setupProductListViewModel()
         setupAdapter()
+        view.addSubview(collectionView)
     }
     
-    // MARK: - Private functions
+    override func viewDidLayoutSubviews() {
+        super.viewDidLayoutSubviews()
+        collectionView.frame = view.bounds
+    }
+    
+    // MARK: - Private functions    
     private func setupProductListViewModel() {
         productListViewModel = ProductListViewModel()
         productListViewModel.delegate = self

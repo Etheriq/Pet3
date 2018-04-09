@@ -18,5 +18,6 @@ extension Color {
         static let red: Color = #colorLiteral(red: 0.9254902005, green: 0.2352941185, blue: 0.1019607857, alpha: 1)
         static let orange: Color = #colorLiteral(red: 0.9607843161, green: 0.7058823705, blue: 0.200000003, alpha: 1)
         static let green: Color = #colorLiteral(red: 0.3411764801, green: 0.6235294342, blue: 0.1686274558, alpha: 1)
+        static let white: Color = #colorLiteral(red: 1, green: 1, blue: 1, alpha: 1)
     }
 }

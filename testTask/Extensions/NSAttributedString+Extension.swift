@@ -16,6 +16,7 @@ extension NSAttributedString {
 //        return ceil(actualSize.height)
         
         let label = UILabel()
+        label.frame.size = CGSize(width: width, height: 1)
         label.numberOfLines = andNumberOfLines
         label.attributedText = self
         label.sizeToFit()

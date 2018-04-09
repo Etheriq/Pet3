@@ -17,33 +17,13 @@
                     <view key="view" contentMode="scaleToFill" id="TPJ-4a-Jz7">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
-                        <subviews>
-                            <collectionView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" dataMode="prototypes" translatesAutoresizingMaskIntoConstraints="NO" id="lk2-1Q-NYz">
-                                <rect key="frame" x="0.0" y="64" width="375" height="603"/>
-                                <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                                <collectionViewFlowLayout key="collectionViewLayout" minimumLineSpacing="10" minimumInteritemSpacing="10" id="WBm-yO-3mJ">
-                                    <size key="itemSize" width="50" height="50"/>
-                                    <size key="headerReferenceSize" width="0.0" height="0.0"/>
-                                    <size key="footerReferenceSize" width="0.0" height="0.0"/>
-                                    <inset key="sectionInset" minX="0.0" minY="0.0" maxX="0.0" maxY="0.0"/>
-                                </collectionViewFlowLayout>
-                                <cells/>
-                            </collectionView>
-                        </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                        <constraints>
-                            <constraint firstItem="fkD-OH-fYB" firstAttribute="trailing" secondItem="lk2-1Q-NYz" secondAttribute="trailing" id="G4C-O3-fMQ"/>
-                            <constraint firstItem="fkD-OH-fYB" firstAttribute="bottom" secondItem="lk2-1Q-NYz" secondAttribute="bottom" id="NVl-ri-90F"/>
-                            <constraint firstItem="lk2-1Q-NYz" firstAttribute="top" secondItem="fkD-OH-fYB" secondAttribute="top" id="k0K-RR-r9N"/>
-                            <constraint firstItem="lk2-1Q-NYz" firstAttribute="leading" secondItem="fkD-OH-fYB" secondAttribute="leading" id="zUA-eW-Mtr"/>
-                        </constraints>
                         <viewLayoutGuide key="safeArea" id="fkD-OH-fYB"/>
                     </view>
                     <navigationItem key="navigationItem" id="8V5-pd-C1h">
                         <barButtonItem key="rightBarButtonItem" title="Next" id="a2k-S8-R6d"/>
                     </navigationItem>
                     <connections>
-                        <outlet property="collectionView" destination="lk2-1Q-NYz" id="2u6-On-tds"/>
                         <outlet property="nextBarButtonItem" destination="a2k-S8-R6d" id="GQp-93-YQH"/>
                     </connections>
                 </viewController>
