@@ -21,5 +21,9 @@ struct Style {
         static let regular: Text = {
             return Text(color: Color.SharedColors.black, font: Font(name: "Ubuntu", size: 14)!)
         }()
+        
+        static let bold: Text = {
+            return Text(color: Color.SharedColors.black, font: Font(name: "Ubuntu-Bold", size: 14)!)
+        }()
     }
 }

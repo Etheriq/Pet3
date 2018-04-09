@@ -7,6 +7,16 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		293D9DEB207B5D79005E0DA7 /* ProductViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 293D9DEA207B5D79005E0DA7 /* ProductViewModel.swift */; };
+		293D9DED207B6428005E0DA7 /* NSAttributedString+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 293D9DEC207B6428005E0DA7 /* NSAttributedString+Extension.swift */; };
+		293D9DEF207B6AEB005E0DA7 /* AvailableProductsSectionController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 293D9DEE207B6AEB005E0DA7 /* AvailableProductsSectionController.swift */; };
+		293D9DF6207B6D5A005E0DA7 /* ProductCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 293D9DF4207B6D5A005E0DA7 /* ProductCell.swift */; };
+		293D9DF7207B6D5A005E0DA7 /* ProductCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 293D9DF5207B6D5A005E0DA7 /* ProductCell.xib */; };
+		293D9DF9207B7B4A005E0DA7 /* ProductListViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 293D9DF8207B7B4A005E0DA7 /* ProductListViewModel.swift */; };
+		293D9DFB207B7D5D005E0DA7 /* ProductsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 293D9DFA207B7D5D005E0DA7 /* ProductsViewController.swift */; };
+		293D9DFF207B8B5E005E0DA7 /* ProductsEmptyView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 293D9DFE207B8B5E005E0DA7 /* ProductsEmptyView.swift */; };
+		293D9E01207B8B7E005E0DA7 /* ProductsEmptyView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 293D9E00207B8B7E005E0DA7 /* ProductsEmptyView.xib */; };
+		293D9E05207B9C2A005E0DA7 /* RoundedImageView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 293D9E04207B9C2A005E0DA7 /* RoundedImageView.swift */; };
 		2999DDAA207AAD0C00D7A792 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2999DDA9207AAD0C00D7A792 /* AppDelegate.swift */; };
 		2999DDAF207AAD0D00D7A792 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 2999DDAD207AAD0D00D7A792 /* Main.storyboard */; };
 		2999DDB1207AAD0E00D7A792 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 2999DDB0207AAD0E00D7A792 /* Assets.xcassets */; };
@@ -33,6 +43,16 @@
 /* Begin PBXFileReference section */
 		0D560D5B7F57B25F2FD59C4A /* Pods-testTask.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-testTask.release.xcconfig"; path = "Pods/Target Support Files/Pods-testTask/Pods-testTask.release.xcconfig"; sourceTree = "<group>"; };
 		1AE9BCA9E7B6AA20DDB1A947 /* Pods_testTask.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_testTask.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		293D9DEA207B5D79005E0DA7 /* ProductViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProductViewModel.swift; sourceTree = "<group>"; };
+		293D9DEC207B6428005E0DA7 /* NSAttributedString+Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "NSAttributedString+Extension.swift"; sourceTree = "<group>"; };
+		293D9DEE207B6AEB005E0DA7 /* AvailableProductsSectionController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AvailableProductsSectionController.swift; sourceTree = "<group>"; };
+		293D9DF4207B6D5A005E0DA7 /* ProductCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProductCell.swift; sourceTree = "<group>"; };
+		293D9DF5207B6D5A005E0DA7 /* ProductCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = ProductCell.xib; sourceTree = "<group>"; };
+		293D9DF8207B7B4A005E0DA7 /* ProductListViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProductListViewModel.swift; sourceTree = "<group>"; };
+		293D9DFA207B7D5D005E0DA7 /* ProductsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProductsViewController.swift; sourceTree = "<group>"; };
+		293D9DFE207B8B5E005E0DA7 /* ProductsEmptyView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProductsEmptyView.swift; sourceTree = "<group>"; };
+		293D9E00207B8B7E005E0DA7 /* ProductsEmptyView.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = ProductsEmptyView.xib; sourceTree = "<group>"; };
+		293D9E04207B9C2A005E0DA7 /* RoundedImageView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RoundedImageView.swift; sourceTree = "<group>"; };
 		2999DDA6207AAD0C00D7A792 /* testTask.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = testTask.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		2999DDA9207AAD0C00D7A792 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		2999DDAE207AAD0D00D7A792 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
@@ -78,6 +98,72 @@
 			name = Frameworks;
 			sourceTree = "<group>";
 		};
+		293D9DF0207B6CCC005E0DA7 /* Cells */ = {
+			isa = PBXGroup;
+			children = (
+				293D9DF1207B6CEA005E0DA7 /* CollectionView */,
+			);
+			path = Cells;
+			sourceTree = "<group>";
+		};
+		293D9DF1207B6CEA005E0DA7 /* CollectionView */ = {
+			isa = PBXGroup;
+			children = (
+				293D9DF2207B6D10005E0DA7 /* ProductsModule */,
+			);
+			path = CollectionView;
+			sourceTree = "<group>";
+		};
+		293D9DF2207B6D10005E0DA7 /* ProductsModule */ = {
+			isa = PBXGroup;
+			children = (
+				293D9DF3207B6D1F005E0DA7 /* ProductCell */,
+			);
+			path = ProductsModule;
+			sourceTree = "<group>";
+		};
+		293D9DF3207B6D1F005E0DA7 /* ProductCell */ = {
+			isa = PBXGroup;
+			children = (
+				293D9DF4207B6D5A005E0DA7 /* ProductCell.swift */,
+				293D9DF5207B6D5A005E0DA7 /* ProductCell.xib */,
+			);
+			path = ProductCell;
+			sourceTree = "<group>";
+		};
+		293D9DFC207B8AD0005E0DA7 /* EmptyViews */ = {
+			isa = PBXGroup;
+			children = (
+				293D9DFD207B8AF3005E0DA7 /* ProductsEmptyView */,
+			);
+			path = EmptyViews;
+			sourceTree = "<group>";
+		};
+		293D9DFD207B8AF3005E0DA7 /* ProductsEmptyView */ = {
+			isa = PBXGroup;
+			children = (
+				293D9DFE207B8B5E005E0DA7 /* ProductsEmptyView.swift */,
+				293D9E00207B8B7E005E0DA7 /* ProductsEmptyView.xib */,
+			);
+			path = ProductsEmptyView;
+			sourceTree = "<group>";
+		};
+		293D9E02207B9BFA005E0DA7 /* ImageView */ = {
+			isa = PBXGroup;
+			children = (
+				293D9E03207B9C0B005E0DA7 /* RoundedImageView */,
+			);
+			path = ImageView;
+			sourceTree = "<group>";
+		};
+		293D9E03207B9C0B005E0DA7 /* RoundedImageView */ = {
+			isa = PBXGroup;
+			children = (
+				293D9E04207B9C2A005E0DA7 /* RoundedImageView.swift */,
+			);
+			path = RoundedImageView;
+			sourceTree = "<group>";
+		};
 		2999DD9D207AAD0C00D7A792 = {
 			isa = PBXGroup;
 			children = (
@@ -102,7 +188,7 @@
 				2999DDD3207AB7CA00D7A792 /* Modules */,
 				2999DDD4207AB7E200D7A792 /* ReusableViews */,
 				2999DDD2207AB7BE00D7A792 /* Extensions */,
-				2999DDE8207AC8D500D7A792 /* Utilites */,
+				2999DDE8207AC8D500D7A792 /* Helpers */,
 				2999DDBB207AB44000D7A792 /* Resources */,
 				2999DDA9207AAD0C00D7A792 /* AppDelegate.swift */,
 				2999DDAD207AAD0D00D7A792 /* Main.storyboard */,
@@ -149,6 +235,7 @@
 			isa = PBXGroup;
 			children = (
 				2999DDD6207AB94600D7A792 /* String+Extensions.swift */,
+				293D9DEC207B6428005E0DA7 /* NSAttributedString+Extension.swift */,
 				2999DDDA207AB97300D7A792 /* UIColor+Extensions.swift */,
 				2999DDDC207AB99F00D7A792 /* UIView+Extensions.swift */,
 				2999DDDE207AB9B400D7A792 /* Typealiases.swift */,
@@ -168,6 +255,9 @@
 		2999DDD4207AB7E200D7A792 /* ReusableViews */ = {
 			isa = PBXGroup;
 			children = (
+				293D9E02207B9BFA005E0DA7 /* ImageView */,
+				293D9DF0207B6CCC005E0DA7 /* Cells */,
+				293D9DFC207B8AD0005E0DA7 /* EmptyViews */,
 			);
 			path = ReusableViews;
 			sourceTree = "<group>";
@@ -186,6 +276,8 @@
 		2999DDE2207AC69000D7A792 /* ViewModel */ = {
 			isa = PBXGroup;
 			children = (
+				293D9DEA207B5D79005E0DA7 /* ProductViewModel.swift */,
+				293D9DF8207B7B4A005E0DA7 /* ProductListViewModel.swift */,
 			);
 			path = ViewModel;
 			sourceTree = "<group>";
@@ -201,6 +293,7 @@
 		2999DDE4207AC6A700D7A792 /* View */ = {
 			isa = PBXGroup;
 			children = (
+				293D9DFA207B7D5D005E0DA7 /* ProductsViewController.swift */,
 			);
 			path = View;
 			sourceTree = "<group>";
@@ -208,16 +301,17 @@
 		2999DDE5207AC6B100D7A792 /* SectionControllers */ = {
 			isa = PBXGroup;
 			children = (
+				293D9DEE207B6AEB005E0DA7 /* AvailableProductsSectionController.swift */,
 			);
 			path = SectionControllers;
 			sourceTree = "<group>";
 		};
-		2999DDE8207AC8D500D7A792 /* Utilites */ = {
+		2999DDE8207AC8D500D7A792 /* Helpers */ = {
 			isa = PBXGroup;
 			children = (
 				2999DDE9207AC90500D7A792 /* ImageSorces.swift */,
 			);
-			path = Utilites;
+			path = Helpers;
 			sourceTree = "<group>";
 		};
 		86A41DA9C0D3FE2652AD5CAD /* Pods */ = {
@@ -289,9 +383,11 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				293D9DF7207B6D5A005E0DA7 /* ProductCell.xib in Resources */,
 				2999DDC9207AB4C800D7A792 /* Ubuntu-B.ttf in Resources */,
 				2999DDCD207AB4C800D7A792 /* Ubuntu-C.ttf in Resources */,
 				2999DDCA207AB4C800D7A792 /* Ubuntu-BI.ttf in Resources */,
+				293D9E01207B8B7E005E0DA7 /* ProductsEmptyView.xib in Resources */,
 				2999DDC7207AB4C800D7A792 /* Ubuntu-L.ttf in Resources */,
 				2999DDC8207AB4C800D7A792 /* Ubuntu-RI.ttf in Resources */,
 				2999DDCE207AB4C800D7A792 /* Ubuntu-LI.ttf in Resources */,
@@ -354,12 +450,20 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				293D9E05207B9C2A005E0DA7 /* RoundedImageView.swift in Sources */,
 				2999DDD7207AB94600D7A792 /* String+Extensions.swift in Sources */,
 				2999DDE1207AB9D500D7A792 /* Styles.swift in Sources */,
+				293D9DFB207B7D5D005E0DA7 /* ProductsViewController.swift in Sources */,
 				2999DDDF207AB9B400D7A792 /* Typealiases.swift in Sources */,
 				2999DDDD207AB99F00D7A792 /* UIView+Extensions.swift in Sources */,
 				2999DDAA207AAD0C00D7A792 /* AppDelegate.swift in Sources */,
+				293D9DEB207B5D79005E0DA7 /* ProductViewModel.swift in Sources */,
+				293D9DEF207B6AEB005E0DA7 /* AvailableProductsSectionController.swift in Sources */,
+				293D9DF9207B7B4A005E0DA7 /* ProductListViewModel.swift in Sources */,
 				2999DDE7207AC6F000D7A792 /* ProductModel.swift in Sources */,
+				293D9DFF207B8B5E005E0DA7 /* ProductsEmptyView.swift in Sources */,
+				293D9DED207B6428005E0DA7 /* NSAttributedString+Extension.swift in Sources */,
+				293D9DF6207B6D5A005E0DA7 /* ProductCell.swift in Sources */,
 				2999DDEA207AC90500D7A792 /* ImageSorces.swift in Sources */,
 				2999DDDB207AB97300D7A792 /* UIColor+Extensions.swift in Sources */,
 			);

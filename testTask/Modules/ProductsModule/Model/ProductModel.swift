@@ -12,7 +12,7 @@ import SwiftRandom
 struct ProductModel {
     // MARK: - Public properties
     let imagePath: String
-    let price: Float
+    let price: Int
     let currency: String = "$"
     let productDescription: String
 }
@@ -20,7 +20,7 @@ struct ProductModel {
 extension ProductModel {
     static func random() -> ProductModel {
         let imageSources = ImageSources()
-        let randomPrice = Randoms.randomFloat(10, 999)
+        let randomPrice = Randoms.randomInt(10, 999)
         let randomDescription = Randoms.randomFakeConversation()
         
         return ProductModel(imagePath: imageSources.randomImagePath(),

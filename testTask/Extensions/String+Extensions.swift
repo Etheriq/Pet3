@@ -13,6 +13,12 @@ extension String {
     func styled(with style: Style.Text) -> NSAttributedString {
         return attributed(font: style.font, color: style.color)
     }
+    
+    func height(withWidth width: CGFloat, font: Font) -> CGFloat {
+        let maxSize = CGSize(width: width, height: CGFloat.greatestFiniteMagnitude)
+        let actualSize = self.boundingRect(with: maxSize, options: [.usesLineFragmentOrigin], attributes: [.font : font], context: nil)
+        return actualSize.height
+    }
 }
 
 private extension String {
