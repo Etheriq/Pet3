@@ -17,6 +17,9 @@ class ProductsViewController: UIViewController {
     // MARK: - Private properties
     fileprivate var adapter: ListAdapter!
     fileprivate var productListViewModel: ProductListViewModel!
+    fileprivate var selectedProductListViewModel: SelectedProductListViewModel!
+    fileprivate var selectedProductListHeaderViewModel: SelectedProductListHeaderViewModel!
+
     fileprivate let collectionView: UICollectionView = {
         let flowLayout = ListCollectionViewLayout(stickyHeaders: false, topContentInset: 0, stretchToEdge: false)
         let collectionView =  UICollectionView(frame: .zero, collectionViewLayout: flowLayout)
@@ -29,8 +32,10 @@ class ProductsViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
 
+        title = "Choose Items"
         nextBarButtonItem.isEnabled = false
         setupProductListViewModel()
+        setupSelectedProductListViewModel()
         setupAdapter()
         view.addSubview(collectionView)
     }
@@ -53,6 +58,11 @@ class ProductsViewController: UIViewController {
         productListViewModel.generateProductViewModels()
     }
     
+    private func setupSelectedProductListViewModel() {
+        selectedProductListViewModel = SelectedProductListViewModel()
+        selectedProductListHeaderViewModel = SelectedProductListHeaderViewModel()
+    }
+    
     private func setupAdapter() {
         let adapterUpdater = ListAdapterUpdater()
         adapter = ListAdapter(updater: adapterUpdater, viewController: self)
@@ -64,7 +74,11 @@ class ProductsViewController: UIViewController {
 // MARK: - ProductListViewModelDelegate
 extension ProductsViewController: ProductListViewModelDelegate {
     func productListViewModelDidUpdate(_ viewModelList: ProductListViewModel, andWithViewModel: ProductViewModel) {
+        
+        selectedProductListViewModel.addProductViewModel(andWithViewModel)
+        selectedProductListHeaderViewModel.updateHeaderTextWith(count: selectedProductListViewModel.objectsToDisplay.count)
         adapter.performUpdates(animated: true, completion: nil)
+        adapter.reloadData(completion: nil)
     }
 }
 
@@ -73,6 +87,10 @@ extension ProductsViewController: ListAdapterDataSource {
     func objects(for listAdapter: ListAdapter) -> [ListDiffable] {
         var objects: [ListDiffable] = []
         
+        if !selectedProductListViewModel.objectsToDisplay.isEmpty {
+            objects.append(selectedProductListHeaderViewModel)
+        }
+        objects.append(selectedProductListViewModel)
         if !productListViewModel.objectsToDisplay.isEmpty {
             objects.append(contentsOf: productListViewModel.objectsToDisplay)
         }
@@ -83,19 +101,16 @@ extension ProductsViewController: ListAdapterDataSource {
     func listAdapter(_ listAdapter: ListAdapter, sectionControllerFor object: Any) -> ListSectionController {
         if object is ProductViewModel {
             return AvailableProductsSectionController()
-        } else {
+        } else if object is SelectedProductListViewModel {
+            return HorizontalSelectedProductsSectionController()
+        } else if object is SelectedProductListHeaderViewModel {
+            return SelectedProductListHeaderSectionController()
+        } else  {
             fatalError("boom")
         }
     }
     
     func emptyView(for listAdapter: ListAdapter) -> UIView? {
-        let emptyView = ProductsEmptyView.fromNib()
-        let setupText = "Tap to generate products".styled(with: .regular)
-        emptyView.setup(with: setupText)
-        emptyView.onGenerateAction = { [weak self] in
-            self?.productListViewModel.generateProductViewModels()
-        }
-        
-        return emptyView
+        return nil
     }
 }

@@ -1,38 +1,33 @@
 //
-//  AvailableProductsSectionController.swift
+//  SelectedProductListHeaderSectionController.swift
 //  testTask
 //
-//  Created by Yuriy T on 09.04.2018.
+//  Created by Yuriy T on 11.04.2018.
 //  Copyright © 2018 Yuriy T. All rights reserved.
 //
 
 import IGListKit
 
-class AvailableProductsSectionController: ListSectionController {
+class SelectedProductListHeaderSectionController: ListSectionController {
     // MARK: - Private properties
-    fileprivate var viewModel: ProductViewModel!
+    fileprivate var viewModel: SelectedProductListHeaderViewModel!
 }
 
-extension AvailableProductsSectionController {
+extension SelectedProductListHeaderSectionController {
     override func numberOfItems() -> Int {
         return 1
     }
-    
     override func sizeForItem(at index: Int) -> CGSize {
         guard let context = collectionContext else { return .zero }
-        
-        return viewModel.getContainerSize((context.containerSize.width / 2))
+        return viewModel.getContainerSize(context.containerSize.width)
     }
-    
     override func cellForItem(at index: Int) -> UICollectionViewCell {
         guard let context = collectionContext else { return UICollectionViewCell() }
-        let cell = context.dequeueReusableCell(withNibName: "ProductCell", bundle: nil, for: self, at: index) as! ProductCell
+        let cell = context.dequeueReusableCell(withNibName: "HorizontalHeaderSelectedProductCell", bundle: nil, for: self, at: index) as! HorizontalHeaderSelectedProductCell
         cell.setup(with: viewModel)
-        
         return cell
     }
-    
     override func didUpdate(to object: Any) {
-        viewModel = object as? ProductViewModel
+        viewModel = object as? SelectedProductListHeaderViewModel
     }
 }

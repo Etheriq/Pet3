@@ -11,18 +11,16 @@ import UIKit
 class ProductsEmptyView: UIView {
 
     // MARK: - Outlets
-    @IBOutlet private weak var generateButton: UIButton!
+    @IBOutlet private weak var infoLabel: UILabel!
     
-    // MARK: - Public properties
-    var onGenerateAction: (() -> ())?
-    
-    // MARK: - Actions
-    @IBAction func generateAction(_ sender: UIButton) {
-        onGenerateAction?()
+    override func awakeFromNib() {
+        super.awakeFromNib()
+        
+        backgroundColor = Color.SharedColors.lightGray
     }
     
     // MARK: - Public functions
-    func setup(with title: NSAttributedString) {
-        generateButton.setAttributedTitle(title, for: .normal)
+    func setup(with infoText: NSAttributedString) {
+        infoLabel.attributedText = infoText
     }
 }
