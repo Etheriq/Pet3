@@ -65,10 +65,10 @@ extension SelectedProductViewModel: SelectedProductViewModelProtocol {
     }
     
     func getContainerSize(_ contextWidth: CGFloat) -> CGSize {
-        let width: CGFloat = contextWidth - 20
+        let width: CGFloat = contextWidth
         let productDescriptionHeight = productDescriptionString.height(withWidth: width)
         // width = image height
-        let containerTotalHeight = width + productDescriptionHeight + 20
+        let containerTotalHeight = width + productDescriptionHeight + 10
         
         return CGSize(width: contextWidth, height: containerTotalHeight)
     }

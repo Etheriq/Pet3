@@ -16,7 +16,14 @@ protocol SelectedProductListViewModelProtocol: class {
     func removeProductViewModel(_ viewModel: SelectedProductViewModel)
 }
 
+protocol SelectedProductListViewModelDelegate: class {
+    func selectedProductViewModelDidDeselected()
+}
+
 class SelectedProductListViewModel {
+    
+    // MARK: - Public properties
+    weak var delegate: SelectedProductListViewModelDelegate?
     
     // MARK: - Private properties
     fileprivate let unique = UUID().uuidString
@@ -34,6 +41,7 @@ class SelectedProductListViewModel {
         if let index = getIndex(of: viewModel) {
             viewModel.userDidDeselectProductButton()
             selectedViewModels.remove(at: index)
+            delegate?.selectedProductViewModelDidDeselected()
         }
     }
 }

@@ -14,7 +14,7 @@ class SelectedProductsSectionController: ListSectionController {
     
     override init() {
         super.init()
-        inset = UIEdgeInsets(top: 10, left: 10, bottom: 10, right: 10)
+        inset = UIEdgeInsets(top: 0, left: 10, bottom: 0, right: 0)
     }
 }
 
@@ -39,5 +39,9 @@ extension SelectedProductsSectionController {
     
     override func didUpdate(to object: Any) {
         viewModel = object as? SelectedProductViewModel
+    }
+    
+    override func didSelectItem(at index: Int) {
+        viewModel.delegate?.selectedproductViewModelDidDeselected(viewModel)
     }
 }

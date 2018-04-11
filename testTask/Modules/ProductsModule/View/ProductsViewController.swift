@@ -60,6 +60,7 @@ class ProductsViewController: UIViewController {
     
     private func setupSelectedProductListViewModel() {
         selectedProductListViewModel = SelectedProductListViewModel()
+        selectedProductListViewModel.delegate = self
         selectedProductListHeaderViewModel = SelectedProductListHeaderViewModel()
     }
     
@@ -68,6 +69,22 @@ class ProductsViewController: UIViewController {
         adapter = ListAdapter(updater: adapterUpdater, viewController: self)
         adapter.dataSource = self
         adapter.collectionView = collectionView
+    }
+    
+    fileprivate func updateAdapter() {
+        selectedProductListHeaderViewModel.updateHeaderTextWith(count: selectedProductListViewModel.objectsToDisplay.count)
+        adapter.performUpdates(animated: true, completion: { (complete) in
+            if complete {
+                // FIXME: - this is very bad, i'm understand, but i'm can't find any other way for updating embedded collection
+                self.adapter.reloadData(completion: nil)
+            }
+        })
+    }
+}
+
+extension ProductsViewController: SelectedProductListViewModelDelegate {
+    func selectedProductViewModelDidDeselected() {
+        updateAdapter()
     }
 }
 
@@ -84,9 +101,7 @@ extension ProductsViewController: ProductListViewModelDelegate {
             }
         }
         
-        selectedProductListHeaderViewModel.updateHeaderTextWith(count: selectedProductListViewModel.objectsToDisplay.count)
-        adapter.performUpdates(animated: true, completion: nil)
-        adapter.reloadData(completion: nil)
+        updateAdapter()
     }
 }
 

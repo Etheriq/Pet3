@@ -29,7 +29,7 @@ extension HorizontalSelectedProductsSectionController {
         guard let context = collectionContext else { return .zero }
         
         let width = context.containerSize.width
-        let height = context.containerSize.height / 4 + 20
+        let height = context.containerSize.height / 4
         
         return CGSize(width: width, height: height)
     }
