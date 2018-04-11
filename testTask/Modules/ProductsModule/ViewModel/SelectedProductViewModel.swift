@@ -11,6 +11,7 @@ import IGListKit
 protocol SelectedProductViewModelProtocol: class {
     var uniqueId: String { get }
     var imagePath: String { get }
+    var productViewModeLId: String { get }
     var productDescriptionString: NSAttributedString { get }
     
     func userDidDeselectProductButton()
@@ -47,6 +48,10 @@ extension SelectedProductViewModel: SelectedProductViewModelProtocol {
         return unique
     }
     
+    var productViewModeLId: String {
+        return productViewModel.uniqueId
+    }
+    
     var imagePath: String {
         return productViewModel.imagePath
     }
@@ -57,7 +62,6 @@ extension SelectedProductViewModel: SelectedProductViewModelProtocol {
     
     func userDidDeselectProductButton() {
         productViewModel.selected = false
-        delegate?.selectedproductViewModelDidDeselected(self)
     }
     
     func getContainerSize(_ contextWidth: CGFloat) -> CGSize {

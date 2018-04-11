@@ -9,11 +9,11 @@
 import IGListKit
 
 protocol SelectedProductListViewModelProtocol: class {
-    var objectsToDisplay: [ListDiffable] { get }
+    var objectsToDisplay: [SelectedProductViewModel] { get }
     var uniqueId: String { get }
     
     func addProductViewModel(_ viewModel: ProductViewModel)
-//    func removeSelectedProductViewModel(_ viewModel: SelectedProductViewModel)
+    func removeProductViewModel(_ viewModel: SelectedProductViewModel)
 }
 
 class SelectedProductListViewModel {
@@ -59,7 +59,7 @@ extension SelectedProductListViewModel: SelectedProductListViewModelProtocol {
         return unique
     }
     
-    var objectsToDisplay: [ListDiffable] {
+    var objectsToDisplay: [SelectedProductViewModel] {
         return selectedViewModels
     }
     
@@ -69,11 +69,9 @@ extension SelectedProductListViewModel: SelectedProductListViewModelProtocol {
         selectedViewModels.append(selectedViewModel)
     }
     
-//    func removeSelectedProductViewModel(_ viewModel: SelectedProductViewModel) {
-//        removeSelectedViewModel(viewModel)
-//    }
-    
-    
+    func removeProductViewModel(_ viewModel: SelectedProductViewModel) {
+        removeSelectedViewModel(viewModel)
+    }
 }
 
 // MARK: - SelectedProductViewModelDelegate

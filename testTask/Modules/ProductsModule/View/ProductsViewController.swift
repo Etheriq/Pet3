@@ -75,7 +75,15 @@ class ProductsViewController: UIViewController {
 extension ProductsViewController: ProductListViewModelDelegate {
     func productListViewModelDidUpdate(_ viewModelList: ProductListViewModel, andWithViewModel: ProductViewModel) {
         
-        selectedProductListViewModel.addProductViewModel(andWithViewModel)
+        if andWithViewModel.state {
+            selectedProductListViewModel.addProductViewModel(andWithViewModel)
+        } else {
+            let selectedViewModel = selectedProductListViewModel.objectsToDisplay.filter { $0.productViewModeLId == andWithViewModel.uniqueId }
+            if let first = selectedViewModel.first {
+                selectedProductListViewModel.removeProductViewModel(first)
+            }
+        }
+        
         selectedProductListHeaderViewModel.updateHeaderTextWith(count: selectedProductListViewModel.objectsToDisplay.count)
         adapter.performUpdates(animated: true, completion: nil)
         adapter.reloadData(completion: nil)
