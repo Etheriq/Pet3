@@ -21,15 +21,57 @@
                         <viewLayoutGuide key="safeArea" id="fkD-OH-fYB"/>
                     </view>
                     <navigationItem key="navigationItem" id="8V5-pd-C1h">
-                        <barButtonItem key="rightBarButtonItem" title="Next" id="a2k-S8-R6d"/>
+                        <barButtonItem key="rightBarButtonItem" title="Next" id="a2k-S8-R6d">
+                            <connections>
+                                <action selector="showFeaturesAction:" destination="hhD-qm-7dC" id="IcT-WL-95x"/>
+                            </connections>
+                        </barButtonItem>
                     </navigationItem>
                     <connections>
                         <outlet property="nextBarButtonItem" destination="a2k-S8-R6d" id="GQp-93-YQH"/>
+                        <segue destination="ssT-dF-V7I" kind="show" identifier="showFeatures" id="MxS-PK-ieL"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="rjC-c7-SgG" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-260" y="-153"/>
+            <point key="canvasLocation" x="-274" y="9"/>
+        </scene>
+        <!--Features View Controller-->
+        <scene sceneID="EUe-cf-r7s">
+            <objects>
+                <viewController id="ssT-dF-V7I" customClass="FeaturesViewController" customModule="testTask" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="Fr4-gd-vDn">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <collectionView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" dataMode="prototypes" translatesAutoresizingMaskIntoConstraints="NO" id="sOJ-8z-OxM">
+                                <rect key="frame" x="0.0" y="64" width="375" height="553"/>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <collectionViewFlowLayout key="collectionViewLayout" minimumLineSpacing="10" minimumInteritemSpacing="10" id="8Ez-8Y-aKj">
+                                    <size key="itemSize" width="50" height="50"/>
+                                    <size key="headerReferenceSize" width="0.0" height="0.0"/>
+                                    <size key="footerReferenceSize" width="0.0" height="0.0"/>
+                                    <inset key="sectionInset" minX="0.0" minY="0.0" maxX="0.0" maxY="0.0"/>
+                                </collectionViewFlowLayout>
+                                <cells/>
+                            </collectionView>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <constraints>
+                            <constraint firstItem="G3n-tC-TJ7" firstAttribute="bottom" secondItem="sOJ-8z-OxM" secondAttribute="bottom" constant="50" id="CNo-28-Lo8"/>
+                            <constraint firstItem="sOJ-8z-OxM" firstAttribute="leading" secondItem="G3n-tC-TJ7" secondAttribute="leading" id="H1m-n0-pRq"/>
+                            <constraint firstItem="sOJ-8z-OxM" firstAttribute="top" secondItem="G3n-tC-TJ7" secondAttribute="top" id="OeW-J2-zsx"/>
+                            <constraint firstItem="G3n-tC-TJ7" firstAttribute="trailing" secondItem="sOJ-8z-OxM" secondAttribute="trailing" id="WLH-ZM-BsT"/>
+                        </constraints>
+                        <viewLayoutGuide key="safeArea" id="G3n-tC-TJ7"/>
+                    </view>
+                    <connections>
+                        <outlet property="collectionView" destination="sOJ-8z-OxM" id="Tp6-Ns-QFn"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="veK-dH-IE6" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="521" y="7"/>
         </scene>
         <!--Navigation Controller-->
         <scene sceneID="Pat-4T-Gj5">

@@ -35,7 +35,7 @@ extension SelectedProductListHeaderViewModel: SelectedProductListHeaderViewModel
     }
     
     func updateHeaderTextWith(count: Int) {
-        self.text = String(format: "Selected %i items", count).styled(with: .regular)
+        self.text = String(format: "Selected %i item", count).styled(with: .regular)
         dataUpdater?.horizontalHeaderSelectedProductDidUpdate(self)
     }
     

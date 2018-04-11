@@ -6,7 +6,6 @@
 //  Copyright © 2018 Yuriy T. All rights reserved.
 //
 
-import UIKit
 import IGListKit
 
 class ProductsViewController: UIViewController {
@@ -19,7 +18,6 @@ class ProductsViewController: UIViewController {
     fileprivate var productListViewModel: ProductListViewModel!
     fileprivate var selectedProductListViewModel: SelectedProductListViewModel!
     fileprivate var selectedProductListHeaderViewModel: SelectedProductListHeaderViewModel!
-
     fileprivate let collectionView: UICollectionView = {
         let flowLayout = ListCollectionViewLayout(stickyHeaders: false, topContentInset: 0, stretchToEdge: false)
         let collectionView =  UICollectionView(frame: .zero, collectionViewLayout: flowLayout)
@@ -40,6 +38,13 @@ class ProductsViewController: UIViewController {
         view.addSubview(collectionView)
     }
     
+    override func viewWillAppear(_ animated: Bool) {
+        super.viewWillAppear(animated)
+        
+        selectedProductListViewModel.delegate = self
+        adapter.reloadData(completion: nil)
+    }
+    
     override func viewDidLayoutSubviews() {
         super.viewDidLayoutSubviews()
         collectionView.frame = view.bounds
@@ -51,6 +56,20 @@ class ProductsViewController: UIViewController {
 //        adapter.reloadData(completion: nil)
     }
     
+    // MARK: - Actions
+    @IBAction func showFeaturesAction(_ sender: UIBarButtonItem) {
+        performSegue(withIdentifier: "showFeatures", sender: nil)
+    }
+    
+    // MARK: - Navigation
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        if segue.identifier == "showFeatures" {
+            let featuresViewController = segue.destination as! FeaturesViewController
+            featuresViewController.selectedProductListHeaderViewModel = selectedProductListHeaderViewModel
+            featuresViewController.selectedProductListViewModel = selectedProductListViewModel
+        }
+    }
+    
     // MARK: - Private functions    
     private func setupProductListViewModel() {
         productListViewModel = ProductListViewModel()
@@ -60,7 +79,6 @@ class ProductsViewController: UIViewController {
     
     private func setupSelectedProductListViewModel() {
         selectedProductListViewModel = SelectedProductListViewModel()
-        selectedProductListViewModel.delegate = self
         selectedProductListHeaderViewModel = SelectedProductListHeaderViewModel()
     }
     
@@ -79,6 +97,11 @@ class ProductsViewController: UIViewController {
                 self.adapter.reloadData(completion: nil)
             }
         })
+        handleNextButton()
+    }
+    
+    fileprivate func handleNextButton() {
+        nextBarButtonItem.isEnabled = selectedProductListViewModel.objectsToDisplay.count > 0
     }
 }
 
