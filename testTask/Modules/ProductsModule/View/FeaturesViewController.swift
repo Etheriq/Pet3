@@ -19,6 +19,7 @@ class FeaturesViewController: UIViewController {
 
     // MARK: - Private properties
     fileprivate var adapter: ListAdapter!
+    fileprivate var featureListViewModel: FeatureListViewModel!
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -26,6 +27,7 @@ class FeaturesViewController: UIViewController {
         title = "Add features"
         collectionView.backgroundColor = Color.SharedColors.lightGray
         selectedProductListViewModel.delegate = self
+        setupFeatureListViewModel()
         setupAdapter()
     }
     
@@ -36,6 +38,12 @@ class FeaturesViewController: UIViewController {
     }
     
     // MARK: - Private functions
+    private func setupFeatureListViewModel() {
+        featureListViewModel = FeatureListViewModel()
+        featureListViewModel.delegate = self
+        featureListViewModel.generateFeatureViewModels()
+    }
+    
     private func setupAdapter() {
         let adapterUpdater = ListAdapterUpdater()
         adapter = ListAdapter(updater: adapterUpdater, viewController: self)
@@ -50,6 +58,12 @@ class FeaturesViewController: UIViewController {
                 self.adapter.reloadData(completion: nil)
             }
         })
+    }
+}
+
+extension FeaturesViewController: FeatureListViewModelDelegate {
+    func featureListViewModelDidUpdate(_ listViewModel: FeatureListViewModel, andWithViewModel viewModel: FeatureViewModel) {
+        updateAdapter()
     }
 }
 
@@ -69,6 +83,9 @@ extension FeaturesViewController: ListAdapterDataSource {
             objects.append(selectedProductListHeaderViewModel)
         }
         objects.append(selectedProductListViewModel)
+        if !featureListViewModel.objectsToDisplay.isEmpty {
+            objects.append(featureListViewModel)
+        }
         
         return objects
     }
@@ -78,7 +95,9 @@ extension FeaturesViewController: ListAdapterDataSource {
             return HorizontalSelectedProductsSectionController()
         } else if object is SelectedProductListHeaderViewModel {
             return SelectedProductListHeaderSectionController()
-        } else  {
+         } else if object is FeatureListViewModel {
+            return FeaturesSectionController()
+         } else  {
             fatalError("boom")
         }
     }

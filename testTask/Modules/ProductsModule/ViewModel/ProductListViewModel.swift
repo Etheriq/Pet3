@@ -34,14 +34,6 @@ class ProductListViewModel {
             viewModels.append(viewModel)
         }
     }
-    
-    fileprivate func getIndex(of viewModel: ProductViewModel) -> Int? {
-        let index = viewModels.index { indexedViewModel -> Bool in
-            return viewModel.uniqueId == indexedViewModel.uniqueId
-        }
-        return index
-    }
-    
 }
 
 // MARK: - ProductListViewModelProtocol

@@ -27,8 +27,6 @@ class ProductCell: UICollectionViewCell {
         viewModel.userDidSelectProductButton()
     }
     
-    // MARK: - Private functions
-    
     // MARK: - Public functions
     func setup(with viewModel: ProductViewModel) {
         self.viewModel = viewModel

@@ -6,7 +6,6 @@
 //  Copyright © 2018 Yuriy T. All rights reserved.
 //
 
-import Foundation
 import SwiftRandom
 
 struct ProductModel {

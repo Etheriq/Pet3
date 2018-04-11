@@ -43,6 +43,7 @@ class ProductsViewController: UIViewController {
         
         selectedProductListViewModel.delegate = self
         adapter.reloadData(completion: nil)
+        handleNextButton()
     }
     
     override func viewDidLayoutSubviews() {
