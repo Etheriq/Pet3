@@ -44,6 +44,7 @@ class ProductsViewController: UIViewController {
         
         selectedProductListViewModel.delegate = self
         selectedProductListViewModel.dataUpdater = horizontalSectionController
+        selectedProductListViewModel.dataUpdater?.selectedProductListViewModelDidUpdated()
         updateAdapter()
     }
     
@@ -112,6 +113,7 @@ extension ProductsViewController: SelectedProductListViewModelDelegate {
 extension ProductsViewController: ProductListViewModelDelegate {
     func productListViewModelDidUpdate(_ viewModelList: ProductListViewModel, andWithViewModel: ProductViewModel) {
         
+        andWithViewModel.dataUpdater?.productViewModelDidSelected(andWithViewModel)
         if andWithViewModel.state {
             selectedProductListViewModel.addProductViewModel(andWithViewModel)
         } else {
@@ -120,7 +122,6 @@ extension ProductsViewController: ProductListViewModelDelegate {
                 selectedProductListViewModel.removeProductViewModel(first)
             }
         }
-        
         updateAdapter()
     }
 }
@@ -135,14 +136,14 @@ extension ProductsViewController: ListAdapterDataSource {
         }
         objects.append(selectedProductListViewModel)
         if !productListViewModel.objectsToDisplay.isEmpty {
-            objects.append(contentsOf: productListViewModel.objectsToDisplay)
+            objects.append(productListViewModel)
         }
 
         return objects
     }
     
     func listAdapter(_ listAdapter: ListAdapter, sectionControllerFor object: Any) -> ListSectionController {
-        if object is ProductViewModel {
+        if object is ProductListViewModel {
             return AvailableProductsSectionController()
         } else if object is SelectedProductListViewModel {
             return horizontalSectionController

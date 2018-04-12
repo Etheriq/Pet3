@@ -44,10 +44,10 @@ class SelectedProductListViewModel {
     
     fileprivate func removeSelectedViewModel(_ viewModel: SelectedProductViewModel) {
         if let index = getIndex(of: viewModel) {
-            viewModel.userDidDeselectProductButton()
             selectedViewModels.remove(at: index)
-            dataUpdater?.selectedProductListViewModelDidUpdated()
+            viewModel.userDidDeselectProductButton()
             delegate?.selectedProductViewModelDidDeselected()
+            dataUpdater?.selectedProductListViewModelDidUpdated()
         }
     }
 }

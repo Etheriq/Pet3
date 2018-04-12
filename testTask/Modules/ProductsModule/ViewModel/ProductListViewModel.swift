@@ -11,6 +11,7 @@ import IGListKit
 protocol ProductListViewModelProtocol: class {
     var objectsToDisplay: [ListDiffable] { get }
     func generateProductViewModels()
+    var uniqueId: String { get }
 }
 
 protocol ProductListViewModelDelegate: class {
@@ -24,6 +25,7 @@ class ProductListViewModel {
     
     // MARK: - Private properties
     fileprivate var viewModels: [ProductViewModel] = []
+    fileprivate let unique = UUID().uuidString
     
     // MARK: - Private functions
     fileprivate func generateViewModels() {
@@ -42,6 +44,10 @@ extension ProductListViewModel: ProductListViewModelProtocol {
         return viewModels
     }
     
+    var uniqueId: String {
+        return unique
+    }
+    
     func generateProductViewModels() {
         generateViewModels()
     }
@@ -51,5 +57,20 @@ extension ProductListViewModel: ProductListViewModelProtocol {
 extension ProductListViewModel: ProductViewModelDelegate {
     func productViewModelDidSelected(_ viewModel: ProductViewModel) {
         delegate?.productListViewModelDidUpdate(self, andWithViewModel: viewModel)
+    }
+}
+
+// MARK: - ListDiffable
+extension ProductListViewModel: ListDiffable {
+    func diffIdentifier() -> NSObjectProtocol {
+        return uniqueId as NSString
+    }
+    
+    func isEqual(toDiffableObject object: ListDiffable?) -> Bool {
+        if let object = object as? ProductListViewModel {
+            return object.uniqueId == uniqueId
+        } else {
+            return false
+        }
     }
 }

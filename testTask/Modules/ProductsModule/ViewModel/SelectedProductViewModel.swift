@@ -62,6 +62,7 @@ extension SelectedProductViewModel: SelectedProductViewModelProtocol {
     
     func userDidDeselectProductButton() {
         productViewModel.selected = false
+        productViewModel.dataUpdater?.productViewModelDidSelected(productViewModel)
     }
     
     func getContainerSize(_ contextWidth: CGFloat) -> CGSize {
