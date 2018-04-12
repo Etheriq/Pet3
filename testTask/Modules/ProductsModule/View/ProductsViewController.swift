@@ -18,6 +18,7 @@ class ProductsViewController: UIViewController {
     fileprivate var productListViewModel: ProductListViewModel!
     fileprivate var selectedProductListViewModel: SelectedProductListViewModel!
     fileprivate var selectedProductListHeaderViewModel: SelectedProductListHeaderViewModel!
+    fileprivate let horizontalSectionController = HorizontalSelectedProductsSectionController()
     fileprivate let collectionView: UICollectionView = {
         let flowLayout = ListCollectionViewLayout(stickyHeaders: false, topContentInset: 0, stretchToEdge: false)
         let collectionView =  UICollectionView(frame: .zero, collectionViewLayout: flowLayout)
@@ -42,8 +43,8 @@ class ProductsViewController: UIViewController {
         super.viewWillAppear(animated)
         
         selectedProductListViewModel.delegate = self
-        adapter.reloadData(completion: nil)
-        handleNextButton()
+        selectedProductListViewModel.dataUpdater = horizontalSectionController
+        updateAdapter()
     }
     
     override func viewDidLayoutSubviews() {
@@ -92,12 +93,7 @@ class ProductsViewController: UIViewController {
     
     fileprivate func updateAdapter() {
         selectedProductListHeaderViewModel.updateHeaderTextWith(count: selectedProductListViewModel.objectsToDisplay.count)
-        adapter.performUpdates(animated: true, completion: { (complete) in
-            if complete {
-                // FIXME: - this is very bad, i'm understand, but i'm can't find any other way for updating embedded collection
-                self.adapter.reloadData(completion: nil)
-            }
-        })
+        adapter.performUpdates(animated: true, completion: nil)
         handleNextButton()
     }
     
@@ -149,7 +145,7 @@ extension ProductsViewController: ListAdapterDataSource {
         if object is ProductViewModel {
             return AvailableProductsSectionController()
         } else if object is SelectedProductListViewModel {
-            return HorizontalSelectedProductsSectionController()
+            return horizontalSectionController
         } else if object is SelectedProductListHeaderViewModel {
             return SelectedProductListHeaderSectionController()
         } else  {

@@ -20,6 +20,7 @@ class FeaturesViewController: UIViewController {
     // MARK: - Private properties
     fileprivate var adapter: ListAdapter!
     fileprivate var featureListViewModel: FeatureListViewModel!
+    fileprivate let horizontalSectionController = HorizontalSelectedProductsSectionController()
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -27,6 +28,7 @@ class FeaturesViewController: UIViewController {
         title = "Add features"
         collectionView.backgroundColor = Color.SharedColors.lightGray
         selectedProductListViewModel.delegate = self
+        selectedProductListViewModel.dataUpdater = horizontalSectionController
         setupFeatureListViewModel()
         setupAdapter()
     }
@@ -53,11 +55,7 @@ class FeaturesViewController: UIViewController {
     
     fileprivate func updateAdapter() {
         selectedProductListHeaderViewModel.updateHeaderTextWith(count: selectedProductListViewModel.objectsToDisplay.count)
-        adapter.performUpdates(animated: true, completion: { (complete) in
-            if complete {
-                self.adapter.reloadData(completion: nil)
-            }
-        })
+        adapter.performUpdates(animated: true, completion: nil)
     }
 }
 
@@ -92,7 +90,7 @@ extension FeaturesViewController: ListAdapterDataSource {
     
     func listAdapter(_ listAdapter: ListAdapter, sectionControllerFor object: Any) -> ListSectionController {
          if object is SelectedProductListViewModel {
-            return HorizontalSelectedProductsSectionController()
+            return horizontalSectionController
         } else if object is SelectedProductListHeaderViewModel {
             return SelectedProductListHeaderSectionController()
          } else if object is FeatureListViewModel {

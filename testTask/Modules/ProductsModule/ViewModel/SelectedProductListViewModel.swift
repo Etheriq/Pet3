@@ -20,10 +20,15 @@ protocol SelectedProductListViewModelDelegate: class {
     func selectedProductViewModelDidDeselected()
 }
 
+protocol SelectedProductListViewModelDataUpdater: class {
+    func selectedProductListViewModelDidUpdated()
+}
+
 class SelectedProductListViewModel {
     
     // MARK: - Public properties
     weak var delegate: SelectedProductListViewModelDelegate?
+    weak var dataUpdater: SelectedProductListViewModelDataUpdater?
     
     // MARK: - Private properties
     fileprivate let unique = UUID().uuidString
@@ -41,6 +46,7 @@ class SelectedProductListViewModel {
         if let index = getIndex(of: viewModel) {
             viewModel.userDidDeselectProductButton()
             selectedViewModels.remove(at: index)
+            dataUpdater?.selectedProductListViewModelDidUpdated()
             delegate?.selectedProductViewModelDidDeselected()
         }
     }
@@ -75,6 +81,7 @@ extension SelectedProductListViewModel: SelectedProductListViewModelProtocol {
         let selectedViewModel = SelectedProductViewModel(viewModel)
         selectedViewModel.delegate = self
         selectedViewModels.append(selectedViewModel)
+        dataUpdater?.selectedProductListViewModelDidUpdated()
     }
     
     func removeProductViewModel(_ viewModel: SelectedProductViewModel) {

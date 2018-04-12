@@ -76,3 +76,10 @@ extension HorizontalSelectedProductsSectionController: ListAdapterDataSource {
         return emptyView
     }
 }
+
+// MARK: - SelectedProductListHeaderViewModelDataUpdater
+extension HorizontalSelectedProductsSectionController: SelectedProductListViewModelDataUpdater {
+    func selectedProductListViewModelDidUpdated() {
+        adapter.performUpdates(animated: true, completion: nil)
+    }
+}
