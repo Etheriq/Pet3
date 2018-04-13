@@ -32,6 +32,7 @@ class ProductsViewController: UIViewController {
         super.viewDidLoad()
 
         title = "Choose Items"
+        navigationItem.backBarButtonItem = UIBarButtonItem(title: "", style: .plain, target: nil, action: nil)
         nextBarButtonItem.isEnabled = false
         setupProductListViewModel()
         setupSelectedProductListViewModel()

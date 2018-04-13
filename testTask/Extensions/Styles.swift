@@ -22,8 +22,20 @@ struct Style {
             return Text(color: Color.SharedColors.black, font: Font(name: "Ubuntu", size: 14)!)
         }()
         
-        static let bold: Text = {
-            return Text(color: Color.SharedColors.black, font: Font(name: "Ubuntu-Bold", size: 14)!)
+        static let featureWithCrossOut: Text = {
+            return Text(color: Color.SharedColors.gray, font: Font(name: "Ubuntu", size: 15)!)
         }()
+        
+        static let selectedItem: Text = {
+            return Text(color: Color.SharedColors.gray_noSelectedFont, font: Font(name: "Ubuntu", size: 14)!)
+        }()
+        static let noSelectedMessage: Text = {
+            return Text(color: Color.SharedColors.gray_noSelectedFont, font: Font(name: "Ubuntu", size: 14)!)
+        }()
+        
+        static let bold: Text = {
+            return Text(color: Color.SharedColors.black, font: Font(name: "Ubuntu-Bold", size: 16)!)
+        }()
+        
     }
 }

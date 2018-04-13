@@ -19,16 +19,16 @@
                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                 <subviews>
                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="ew1-9c-zz9" customClass="RoundedView" customModule="testTask" customModuleProvider="target">
-                        <rect key="frame" x="5" y="5" width="352" height="378"/>
+                        <rect key="frame" x="15" y="15" width="332" height="368"/>
                         <subviews>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="vse-TR-Had" userLabel="actualPriceLabel">
-                                <rect key="frame" x="20" y="65" width="312" height="21"/>
+                                <rect key="frame" x="20" y="65" width="292" height="21"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="h8p-KV-VFf" userLabel="oldPriceLabel">
-                                <rect key="frame" x="20" y="93" width="312" height="21"/>
+                                <rect key="frame" x="20" y="93" width="292" height="21"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
@@ -50,39 +50,41 @@
                                 </userDefinedRuntimeAttributes>
                             </button>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="0" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="2R7-uu-J4w">
-                                <rect key="frame" x="261" y="22" width="11" height="21"/>
+                                <rect key="frame" x="244" y="22" width="11" height="21"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="fND-QG-mfZ">
-                                <rect key="frame" x="292" y="12.5" width="40" height="40"/>
+                                <rect key="frame" x="272" y="13" width="40" height="40"/>
                                 <constraints>
                                     <constraint firstAttribute="width" constant="40" id="BxA-do-veQ"/>
                                     <constraint firstAttribute="height" constant="40" id="mNc-n9-TQA"/>
                                 </constraints>
-                                <state key="normal" title="+">
+                                <state key="normal" image="increase-normal">
                                     <color key="titleColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 </state>
+                                <state key="disabled" image="decrease-disabled"/>
                                 <connections>
                                     <action selector="increaseButtonAction:" destination="gTV-IL-0wX" eventType="touchUpInside" id="tKk-3A-POS"/>
                                 </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" enabled="NO" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="4b2-QN-RfI">
-                                <rect key="frame" x="201" y="12.5" width="40" height="40"/>
+                                <rect key="frame" x="187" y="13" width="40" height="40"/>
                                 <constraints>
                                     <constraint firstAttribute="width" constant="40" id="cM6-hd-BQP"/>
                                     <constraint firstAttribute="height" constant="40" id="sTF-R6-RMW"/>
                                 </constraints>
-                                <state key="normal" title="-">
+                                <state key="normal" image="decrease-normal">
                                     <color key="titleColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 </state>
+                                <state key="disabled" image="decrease-disabled"/>
                                 <connections>
                                     <action selector="decreaseButtonAction:" destination="gTV-IL-0wX" eventType="touchUpInside" id="lXz-cp-Dp8"/>
                                 </connections>
                             </button>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="CAV-1f-DRO" userLabel="descriptionLabel">
-                                <rect key="frame" x="20" y="134" width="312" height="20.5"/>
+                                <rect key="frame" x="20" y="134" width="292" height="20.5"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
@@ -96,8 +98,8 @@
                             <constraint firstItem="CAV-1f-DRO" firstAttribute="top" secondItem="h8p-KV-VFf" secondAttribute="bottom" constant="20" id="AMy-06-dYJ"/>
                             <constraint firstItem="CAV-1f-DRO" firstAttribute="leading" secondItem="ew1-9c-zz9" secondAttribute="leading" constant="20" id="HKe-9r-moa"/>
                             <constraint firstItem="fND-QG-mfZ" firstAttribute="centerY" secondItem="2R7-uu-J4w" secondAttribute="centerY" id="Hzr-X3-QFm"/>
-                            <constraint firstItem="fND-QG-mfZ" firstAttribute="leading" secondItem="2R7-uu-J4w" secondAttribute="trailing" constant="20" id="J9q-IK-rYx"/>
-                            <constraint firstItem="2R7-uu-J4w" firstAttribute="leading" secondItem="4b2-QN-RfI" secondAttribute="trailing" constant="20" id="Kub-1w-gLV"/>
+                            <constraint firstItem="fND-QG-mfZ" firstAttribute="leading" secondItem="2R7-uu-J4w" secondAttribute="trailing" constant="17" id="J9q-IK-rYx"/>
+                            <constraint firstItem="2R7-uu-J4w" firstAttribute="leading" secondItem="4b2-QN-RfI" secondAttribute="trailing" constant="17" id="Kub-1w-gLV"/>
                             <constraint firstItem="h8p-KV-VFf" firstAttribute="leading" secondItem="ew1-9c-zz9" secondAttribute="leading" constant="20" id="Q24-0d-bNu"/>
                             <constraint firstItem="vse-TR-Had" firstAttribute="top" secondItem="3VD-Fj-8oO" secondAttribute="bottom" constant="20" id="UPg-Ay-R4Y"/>
                             <constraint firstAttribute="trailing" secondItem="vse-TR-Had" secondAttribute="trailing" constant="20" id="YlK-PC-00J"/>
@@ -112,33 +114,30 @@
                             <userDefinedRuntimeAttribute type="number" keyPath="cornerRadius">
                                 <real key="value" value="10"/>
                             </userDefinedRuntimeAttribute>
-                            <userDefinedRuntimeAttribute type="number" keyPath="borderWidth">
-                                <real key="value" value="2"/>
-                            </userDefinedRuntimeAttribute>
                             <userDefinedRuntimeAttribute type="color" keyPath="borderColor">
-                                <color key="value" red="0.85786158379999999" green="0.85786158379999999" blue="0.85786158379999999" alpha="1" colorSpace="calibratedRGB"/>
+                                <color key="value" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                             </userDefinedRuntimeAttribute>
                             <userDefinedRuntimeAttribute type="color" keyPath="shadowColor">
-                                <color key="value" white="0.66666666669999997" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <color key="value" white="0.66666666666666663" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                             </userDefinedRuntimeAttribute>
                             <userDefinedRuntimeAttribute type="number" keyPath="shadowRadius">
-                                <real key="value" value="10"/>
+                                <real key="value" value="2"/>
                             </userDefinedRuntimeAttribute>
                             <userDefinedRuntimeAttribute type="size" keyPath="shadowOffset">
-                                <size key="value" width="15" height="7"/>
+                                <size key="value" width="0.0" height="0.0"/>
                             </userDefinedRuntimeAttribute>
                             <userDefinedRuntimeAttribute type="number" keyPath="shadowOpacity">
-                                <real key="value" value="2"/>
+                                <real key="value" value="1"/>
                             </userDefinedRuntimeAttribute>
                         </userDefinedRuntimeAttributes>
                     </view>
                 </subviews>
             </view>
             <constraints>
-                <constraint firstItem="ew1-9c-zz9" firstAttribute="leading" secondItem="gTV-IL-0wX" secondAttribute="leading" constant="5" id="D7V-Pt-ue5"/>
-                <constraint firstAttribute="trailing" secondItem="ew1-9c-zz9" secondAttribute="trailing" constant="5" id="QUq-IC-5et"/>
+                <constraint firstItem="ew1-9c-zz9" firstAttribute="leading" secondItem="gTV-IL-0wX" secondAttribute="leading" constant="15" id="D7V-Pt-ue5"/>
+                <constraint firstAttribute="trailing" secondItem="ew1-9c-zz9" secondAttribute="trailing" constant="15" id="QUq-IC-5et"/>
                 <constraint firstAttribute="bottom" secondItem="ew1-9c-zz9" secondAttribute="bottom" id="TzH-fR-kTr"/>
-                <constraint firstItem="ew1-9c-zz9" firstAttribute="top" secondItem="gTV-IL-0wX" secondAttribute="top" constant="5" id="YVU-rf-TMo"/>
+                <constraint firstItem="ew1-9c-zz9" firstAttribute="top" secondItem="gTV-IL-0wX" secondAttribute="top" constant="15" id="YVU-rf-TMo"/>
             </constraints>
             <size key="customSize" width="362" height="383"/>
             <connections>
@@ -152,4 +151,9 @@
             <point key="canvasLocation" x="-4" y="45"/>
         </collectionViewCell>
     </objects>
+    <resources>
+        <image name="decrease-disabled" width="32" height="33"/>
+        <image name="decrease-normal" width="32" height="33"/>
+        <image name="increase-normal" width="32" height="33"/>
+    </resources>
 </document>

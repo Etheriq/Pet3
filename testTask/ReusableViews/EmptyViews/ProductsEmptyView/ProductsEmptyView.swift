@@ -16,7 +16,7 @@ class ProductsEmptyView: UIView {
     override func awakeFromNib() {
         super.awakeFromNib()
         
-        backgroundColor = Color.SharedColors.featureBackground
+        backgroundColor = Color.SharedColors.gray_noSelectedBackground
     }
     
     // MARK: - Public functions

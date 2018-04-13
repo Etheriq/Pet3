@@ -12,7 +12,7 @@ protocol SelectedProductViewModelProtocol: class {
     var uniqueId: String { get }
     var imagePath: String { get }
     var productViewModeLId: String { get }
-    var productDescriptionString: NSAttributedString { get }
+    var productDescriptionString: String { get }
     
     func userDidDeselectProductButton()
     func getContainerSize(_ contextWidth: CGFloat) -> CGSize
@@ -56,7 +56,7 @@ extension SelectedProductViewModel: SelectedProductViewModelProtocol {
         return productViewModel.imagePath
     }
     
-    var productDescriptionString: NSAttributedString {
+    var productDescriptionString: String {
         return productViewModel.productDescriptionString
     }
     
@@ -67,7 +67,7 @@ extension SelectedProductViewModel: SelectedProductViewModelProtocol {
     
     func getContainerSize(_ contextWidth: CGFloat) -> CGSize {
         let width: CGFloat = contextWidth
-        let productDescriptionHeight = productDescriptionString.height(withWidth: width)
+        let productDescriptionHeight = productDescriptionString.styled(with: .selectedItem).height(withWidth: width)
         // width = image height
         let containerTotalHeight = width + productDescriptionHeight + 10
         

@@ -14,7 +14,7 @@ protocol ProductViewModelProtocol: class {
     var imagePath: String { get }
     var productCurrencyString: NSAttributedString { get }
     var productPriceString: NSAttributedString { get }
-    var productDescriptionString: NSAttributedString { get }
+    var productDescriptionString: String { get }
     
     func userDidSelectProductButton()
     func getContainerSize(_ contextWidth: CGFloat) -> CGSize
@@ -67,8 +67,8 @@ extension ProductViewModel: ProductViewModelProtocol {
         return  String(format: "%i", product.price).styled(with: .bold)
     }
     
-    var productDescriptionString: NSAttributedString {
-        return product.productDescription.styled(with: .regular)
+    var productDescriptionString: String {
+        return product.productDescription
     }
     
     func userDidSelectProductButton() {
@@ -79,7 +79,7 @@ extension ProductViewModel: ProductViewModelProtocol {
     
     func getContainerSize(_ contextWidth: CGFloat) -> CGSize {
         let width: CGFloat = contextWidth - 20
-        let productDescriptionHeight = productDescriptionString.height(withWidth: width, andNumberOfLines: 2)
+        let productDescriptionHeight = productDescriptionString.styled(with: .regular).height(withWidth: width, andNumberOfLines: 2)
         let priceHeight = productPriceString.height(withWidth: width)
         // width = image height
         let containerTotalHeight = width + priceHeight + productDescriptionHeight + 40

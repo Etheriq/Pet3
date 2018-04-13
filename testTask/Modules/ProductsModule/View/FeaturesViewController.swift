@@ -31,7 +31,8 @@ class FeaturesViewController: UIViewController {
         
         title = "Add features"
         totalLabel.attributedText = "Total".styled(with: .regular)
-        collectionView.backgroundColor = Color.SharedColors.featureBackground
+        totalPriceLabel.attributedText = "0".styled(with: .bold)
+        collectionView.backgroundColor = Color.SharedColors.gray_noSelectedBackground
         selectedProductListViewModel.delegate = self
         selectedProductListViewModel.dataUpdater = horizontalSectionController
         totalPriceViewModel.dataUpdater = self

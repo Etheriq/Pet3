@@ -20,12 +20,12 @@ class FeatureCell: UICollectionViewCell {
     // MARK: - Private properties
     private var viewModel: FeatureViewModel?
     private let minAmount: Int = 0
-    private let maxAmount: Int = 50
+    private let maxAmount: Int = 25
     private var currentAmount: Int = 0 {
         didSet {
             increaseAmounButton.isEnabled = currentAmount < maxAmount
             decreaseAmountButton.isEnabled = currentAmount > minAmount
-            amountLabel.attributedText = String(format: "%i", currentAmount).styled(with: .regular)
+            amountLabel.attributedText = String(format: "%i", currentAmount).styled(with: .bold)
         }
     }
     
@@ -48,9 +48,9 @@ class FeatureCell: UICollectionViewCell {
         self.viewModel?.dataUpdater = self
         
         currentAmount = viewModel.amount
-        actualPriceLabel.attributedText = "\(viewModel.featureActualPriceString) \(viewModel.featureCurrencyString)".styled(with: .regular)
-        oldPriceLabel.attributedText = "\(viewModel.featureOldPriceString) \(viewModel.featureCurrencyString)".styled(with: .regular)
-        descriptionLabel.attributedText = viewModel.featureDescriptionString.styled(with: .regular)
+        actualPriceLabel.attributedText = "\(viewModel.featureActualPriceString) \(viewModel.featureCurrencyString)".styled(with: .bold)
+        oldPriceLabel.attributedText = "\(viewModel.featureOldPriceString) \(viewModel.featureCurrencyString)".styled(with: .featureWithCrossOut, crossOut: true)
+        descriptionLabel.attributedText = viewModel.featureDescriptionString.styled(with: .featureWithCrossOut)
     }
     
     override func prepareForReuse() {

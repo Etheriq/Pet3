@@ -39,10 +39,19 @@
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="selectedDelete-normal" translatesAutoresizingMaskIntoConstraints="NO" id="c86-X7-UtJ">
+                                <rect key="frame" x="353" y="5" width="16" height="16"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="16" id="VYf-Mf-sEP"/>
+                                    <constraint firstAttribute="width" constant="16" id="hBE-3w-ZL6"/>
+                                </constraints>
+                            </imageView>
                         </subviews>
                         <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <constraints>
+                            <constraint firstItem="c86-X7-UtJ" firstAttribute="top" secondItem="3Dt-TJ-w60" secondAttribute="top" constant="5" id="2fb-FM-tjr"/>
                             <constraint firstItem="8JI-G8-p7z" firstAttribute="leading" secondItem="3Dt-TJ-w60" secondAttribute="leading" id="4dF-J3-qmv"/>
+                            <constraint firstAttribute="trailing" secondItem="c86-X7-UtJ" secondAttribute="trailing" constant="5" id="OcK-12-avg"/>
                             <constraint firstItem="8jM-gX-PO6" firstAttribute="width" secondItem="3Dt-TJ-w60" secondAttribute="width" id="Yhs-GW-6g4"/>
                             <constraint firstItem="8jM-gX-PO6" firstAttribute="top" secondItem="3Dt-TJ-w60" secondAttribute="top" id="lpE-gl-gJu"/>
                             <constraint firstAttribute="trailing" secondItem="8JI-G8-p7z" secondAttribute="trailing" id="pRN-vi-7yt"/>
@@ -66,4 +75,7 @@
             <point key="canvasLocation" x="-156" y="-29"/>
         </collectionViewCell>
     </objects>
+    <resources>
+        <image name="selectedDelete-normal" width="28" height="28"/>
+    </resources>
 </document>

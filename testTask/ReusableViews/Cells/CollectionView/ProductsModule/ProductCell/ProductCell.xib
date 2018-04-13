@@ -34,18 +34,18 @@
                                 </userDefinedRuntimeAttributes>
                             </imageView>
                             <button opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="TKq-1g-DJq" userLabel="selectButton">
-                                <rect key="frame" x="311" y="15" width="40" height="40"/>
-                                <color key="backgroundColor" red="0.85954119449999999" green="1" blue="0.49903147129999997" alpha="1" colorSpace="calibratedRGB"/>
+                                <rect key="frame" x="326" y="12" width="28" height="28"/>
+                                <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <constraints>
-                                    <constraint firstAttribute="height" constant="40" id="7aq-qI-GXa"/>
-                                    <constraint firstAttribute="width" constant="40" id="Zc5-Vv-BYt"/>
+                                    <constraint firstAttribute="height" constant="28" id="7aq-qI-GXa"/>
+                                    <constraint firstAttribute="width" constant="28" id="Zc5-Vv-BYt"/>
                                 </constraints>
                                 <color key="tintColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                                <state key="normal">
+                                <state key="normal" image="checkbox-normal">
                                     <color key="titleColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                     <color key="titleShadowColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 </state>
-                                <state key="selected" image="placeholder"/>
+                                <state key="selected" image="checkbox-checked"/>
                                 <connections>
                                     <action selector="selectAction:" destination="gTV-IL-0wX" eventType="touchUpInside" id="e8U-TR-7zo"/>
                                 </connections>
@@ -71,7 +71,7 @@
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <constraints>
-                            <constraint firstAttribute="trailing" secondItem="TKq-1g-DJq" secondAttribute="trailing" constant="15" id="7YK-1u-P1y"/>
+                            <constraint firstAttribute="trailing" secondItem="TKq-1g-DJq" secondAttribute="trailing" constant="12" id="7YK-1u-P1y"/>
                             <constraint firstAttribute="trailing" secondItem="gp4-N2-yQA" secondAttribute="trailing" id="Dup-JY-CaT"/>
                             <constraint firstItem="gp4-N2-yQA" firstAttribute="leading" secondItem="Tbc-9p-gQP" secondAttribute="leading" id="Fo5-Hb-R2C"/>
                             <constraint firstItem="gp4-N2-yQA" firstAttribute="top" secondItem="QUN-bo-0Cl" secondAttribute="bottom" constant="10" id="GXx-rt-zV5"/>
@@ -79,7 +79,7 @@
                             <constraint firstAttribute="trailing" secondItem="EUA-Rj-svi" secondAttribute="trailing" id="Rpa-Pe-91F"/>
                             <constraint firstItem="D4h-DH-KhP" firstAttribute="top" secondItem="Tbc-9p-gQP" secondAttribute="top" id="UUB-5c-AJN"/>
                             <constraint firstItem="D4h-DH-KhP" firstAttribute="centerX" secondItem="Tbc-9p-gQP" secondAttribute="centerX" id="Wn7-Y0-4e8"/>
-                            <constraint firstItem="TKq-1g-DJq" firstAttribute="top" secondItem="Tbc-9p-gQP" secondAttribute="top" constant="15" id="bvZ-Na-kah"/>
+                            <constraint firstItem="TKq-1g-DJq" firstAttribute="top" secondItem="Tbc-9p-gQP" secondAttribute="top" constant="12" id="bvZ-Na-kah"/>
                             <constraint firstItem="D4h-DH-KhP" firstAttribute="width" secondItem="Tbc-9p-gQP" secondAttribute="width" id="hUu-We-bfC"/>
                             <constraint firstItem="EUA-Rj-svi" firstAttribute="leading" secondItem="QUN-bo-0Cl" secondAttribute="trailing" constant="5" id="j0r-X1-rrN"/>
                             <constraint firstItem="QUN-bo-0Cl" firstAttribute="leading" secondItem="Tbc-9p-gQP" secondAttribute="leading" id="qer-4I-6Vp"/>
@@ -106,6 +106,7 @@
         </collectionViewCell>
     </objects>
     <resources>
-        <image name="placeholder" width="355" height="266"/>
+        <image name="checkbox-checked" width="28" height="28"/>
+        <image name="checkbox-normal" width="28" height="28"/>
     </resources>
 </document>

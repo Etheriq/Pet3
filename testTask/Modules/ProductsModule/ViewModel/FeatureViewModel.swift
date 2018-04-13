@@ -98,7 +98,7 @@ extension FeatureViewModel: FeatureViewModelProtocol {
         let oldPriceHeight = "\(featureOldPriceString) \(featureCurrencyString)".styled(with: .regular).height(withWidth: width, andNumberOfLines: 1)
         let featureDescriptionHeight = featureDescriptionString.styled(with: .regular).height(withWidth: width, andNumberOfLines: 0)
         
-        let totalHeight = actualPriceHeight + oldPriceHeight + featureDescriptionHeight + 112
+        let totalHeight = actualPriceHeight + oldPriceHeight + featureDescriptionHeight + 122
         
         return CGSize(width: contextWidth, height: totalHeight)
     }

@@ -24,7 +24,7 @@ class SelectedProductCell: UICollectionViewCell {
         if let url = URL(string: viewModel.imagePath) {
             imageView.kf.setImage(with: url, placeholder: nil, options: [.transition(.fade(0.2))])
         }
-        descriptionLabel.attributedText = viewModel.productDescriptionString
+        descriptionLabel.attributedText = viewModel.productDescriptionString.styled(with: .selectedItem)
     }
 }
 

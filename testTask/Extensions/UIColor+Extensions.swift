@@ -20,5 +20,8 @@ extension Color {
         static let green: Color = #colorLiteral(red: 0.3411764801, green: 0.6235294342, blue: 0.1686274558, alpha: 1)
         static let white: Color = #colorLiteral(red: 1, green: 1, blue: 1, alpha: 1)
         static let featureBackground = #colorLiteral(red: 0.8854025006, green: 0.885423243, blue: 0.885412097, alpha: 0.5)
+        static let gray_noSelectedFont = #colorLiteral(red: 0.631372549, green: 0.6588235294, blue: 0.7411764706, alpha: 1)
+        static let gray_noSelectedBackground = #colorLiteral(red: 0.9764705882, green: 0.9843137255, blue: 1, alpha: 1)
+        static let gray_selectedFont = #colorLiteral(red: 0.631372549, green: 0.6588235294, blue: 0.7411764706, alpha: 1)
     }
 }

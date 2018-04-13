@@ -13,7 +13,7 @@ class RoundedView: UIView {
     @IBInspectable var cornerRadius: CGFloat = 0 {
         didSet {
             layer.cornerRadius = cornerRadius
-            layer.masksToBounds = cornerRadius > 0
+            layer.masksToBounds = false
         }
     }
     

@@ -38,7 +38,7 @@ class ProductCell: UICollectionViewCell {
         selectButton.isSelected = viewModel.state
         currencyLabel.attributedText = viewModel.productCurrencyString
         priceLabel.attributedText = viewModel.productPriceString
-        descriptionLabel.attributedText = viewModel.productDescriptionString
+        descriptionLabel.attributedText = viewModel.productDescriptionString.styled(with: .regular)
     }
 }
 

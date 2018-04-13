@@ -10,8 +10,8 @@ import UIKit
 
 extension String {
     
-    func styled(with style: Style.Text) -> NSAttributedString {
-        return attributed(font: style.font, color: style.color)
+    func styled(with style: Style.Text, crossOut: Bool = false) -> NSAttributedString {
+        return attributed(font: style.font, color: style.color, crossOut: crossOut)
     }
     
     func height(withWidth width: CGFloat, font: Font) -> CGFloat {
@@ -22,10 +22,15 @@ extension String {
 }
 
 private extension String {
-    func attributed(font: Font, color: Color) -> NSAttributedString {
+    func attributed(font: Font, color: Color, crossOut: Bool = false) -> NSAttributedString {
         var attributes: Dictionary<NSAttributedStringKey, Any> = Dictionary()
         attributes[NSAttributedStringKey.font] = font
         attributes[NSAttributedStringKey.foregroundColor] = color
+        if crossOut {
+            attributes[NSAttributedStringKey.strikethroughStyle] = 1
+            attributes[NSAttributedStringKey.baselineOffset] = 0
+        }
+        
         return NSAttributedString(string: self, attributes: attributes)
     }
 }

@@ -22,6 +22,7 @@
                     </view>
                     <navigationItem key="navigationItem" id="8V5-pd-C1h">
                         <barButtonItem key="rightBarButtonItem" title="Next" id="a2k-S8-R6d">
+                            <color key="tintColor" red="0.18823529410000001" green="0.7843137255" blue="0.30588235289999999" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                             <connections>
                                 <action selector="showFeaturesAction:" destination="hhD-qm-7dC" id="IcT-WL-95x"/>
                             </connections>
@@ -34,7 +35,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="rjC-c7-SgG" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-274" y="9"/>
+            <point key="canvasLocation" x="-284" y="-215"/>
         </scene>
         <!--Features View Controller-->
         <scene sceneID="EUe-cf-r7s">
@@ -55,9 +56,16 @@
                                 </collectionViewFlowLayout>
                                 <cells/>
                             </collectionView>
-                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="ud7-9H-xrl">
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="ud7-9H-xrl" userLabel="footerView">
                                 <rect key="frame" x="0.0" y="597" width="375" height="70"/>
                                 <subviews>
+                                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="fJG-dR-1AR" userLabel="separatorView">
+                                        <rect key="frame" x="0.0" y="0.0" width="375" height="1"/>
+                                        <color key="backgroundColor" white="0.33333333333333331" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                        <constraints>
+                                            <constraint firstAttribute="height" constant="1" id="itw-k3-tkQ"/>
+                                        </constraints>
+                                    </view>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="total" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="oJI-nU-ip2">
                                         <rect key="frame" x="20" y="10" width="29" height="17"/>
                                         <fontDescription key="fontDescription" type="system" pointSize="14"/>
@@ -87,13 +95,16 @@
                                     <constraint firstAttribute="bottom" secondItem="OVB-7c-yct" secondAttribute="bottom" constant="20" id="5g5-gg-X8O"/>
                                     <constraint firstItem="oJI-nU-ip2" firstAttribute="top" secondItem="ud7-9H-xrl" secondAttribute="top" constant="10" id="CAS-fa-rTw"/>
                                     <constraint firstItem="xFC-PG-PBu" firstAttribute="top" secondItem="oJI-nU-ip2" secondAttribute="bottom" constant="10" id="CK2-49-y3t"/>
+                                    <constraint firstItem="fJG-dR-1AR" firstAttribute="top" secondItem="ud7-9H-xrl" secondAttribute="top" id="EMd-zU-lLZ"/>
                                     <constraint firstItem="OVB-7c-yct" firstAttribute="leading" relation="greaterThanOrEqual" secondItem="ud7-9H-xrl" secondAttribute="leading" constant="20" symbolic="YES" id="Gia-cm-3vL"/>
                                     <constraint firstAttribute="trailing" secondItem="OVB-7c-yct" secondAttribute="trailing" constant="20" id="IRk-wa-j47"/>
                                     <constraint firstAttribute="height" constant="70" id="NPa-aC-F2x"/>
                                     <constraint firstItem="OVB-7c-yct" firstAttribute="leading" relation="greaterThanOrEqual" secondItem="oJI-nU-ip2" secondAttribute="trailing" constant="8" id="R4j-Uw-rRx"/>
                                     <constraint firstItem="OVB-7c-yct" firstAttribute="top" secondItem="ud7-9H-xrl" secondAttribute="top" constant="20" id="S5X-0b-xO8"/>
                                     <constraint firstItem="OVB-7c-yct" firstAttribute="leading" relation="greaterThanOrEqual" secondItem="xFC-PG-PBu" secondAttribute="trailing" constant="8" symbolic="YES" id="Sd5-XK-EQ2"/>
+                                    <constraint firstItem="fJG-dR-1AR" firstAttribute="leading" secondItem="ud7-9H-xrl" secondAttribute="leading" id="b9n-78-RMp"/>
                                     <constraint firstItem="oJI-nU-ip2" firstAttribute="leading" secondItem="ud7-9H-xrl" secondAttribute="leading" constant="20" id="ePa-r3-SrC"/>
+                                    <constraint firstAttribute="trailing" secondItem="fJG-dR-1AR" secondAttribute="trailing" id="hba-bD-rfn"/>
                                     <constraint firstItem="xFC-PG-PBu" firstAttribute="leading" secondItem="ud7-9H-xrl" secondAttribute="leading" constant="20" id="nN9-7b-9iu"/>
                                 </constraints>
                             </view>
@@ -119,7 +130,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="veK-dH-IE6" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="520.79999999999995" y="6.746626686656672"/>
+            <point key="canvasLocation" x="492" y="268.51574212893553"/>
         </scene>
         <!--Navigation Controller-->
         <scene sceneID="Pat-4T-Gj5">
@@ -129,6 +140,7 @@
                     <navigationBar key="navigationBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="Law-rm-Rdm">
                         <rect key="frame" x="0.0" y="20" width="375" height="44"/>
                         <autoresizingMask key="autoresizingMask"/>
+                        <color key="tintColor" white="0.33333333333333331" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                     </navigationBar>
                     <nil name="viewControllers"/>
                     <connections>

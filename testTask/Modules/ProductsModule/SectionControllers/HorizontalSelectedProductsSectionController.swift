@@ -70,7 +70,7 @@ extension HorizontalSelectedProductsSectionController: ListAdapterDataSource {
     
     func emptyView(for listAdapter: ListAdapter) -> UIView? {
         let emptyView = ProductsEmptyView.fromNib()
-        let infoText = "No selected items".styled(with: .regular)
+        let infoText = "No selected items".styled(with: .noSelectedMessage)
         emptyView.setup(with: infoText)
         
         return emptyView
