@@ -46,18 +46,13 @@ class ProductsViewController: UIViewController {
         selectedProductListViewModel.delegate = self
         selectedProductListViewModel.dataUpdater = horizontalSectionController
         selectedProductListViewModel.dataUpdater?.selectedProductListViewModelDidUpdated()
+        
         updateAdapter()
     }
     
     override func viewDidLayoutSubviews() {
         super.viewDidLayoutSubviews()
         collectionView.frame = view.bounds
-//        guard let flowLayout = collectionView.collectionViewLayout as? ListCollectionViewLayout else {
-//            return
-//        }
-//        
-//        flowLayout.invalidateLayout()
-//        adapter.reloadData(completion: nil)
     }
     
     // MARK: - Actions
@@ -74,7 +69,7 @@ class ProductsViewController: UIViewController {
         }
     }
     
-    // MARK: - Private functions    
+    // MARK: - Private functions
     private func setupProductListViewModel() {
         productListViewModel = ProductListViewModel()
         productListViewModel.delegate = self
