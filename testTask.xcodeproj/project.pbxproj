@@ -29,6 +29,10 @@
 		293D9E24207D61C4005E0DA7 /* SelectedProductListHeaderSectionController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 293D9E23207D61C4005E0DA7 /* SelectedProductListHeaderSectionController.swift */; };
 		293D9E27207D6285005E0DA7 /* HorizontalHeaderSelectedProductCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 293D9E25207D6285005E0DA7 /* HorizontalHeaderSelectedProductCell.swift */; };
 		293D9E28207D6285005E0DA7 /* HorizontalHeaderSelectedProductCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 293D9E26207D6285005E0DA7 /* HorizontalHeaderSelectedProductCell.xib */; };
+		2970E705208003DD00A4266D /* RoundedView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2970E704208003DD00A4266D /* RoundedView.swift */; };
+		2970E708208012E700A4266D /* RoundedButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2970E707208012E700A4266D /* RoundedButton.swift */; };
+		2970E70A2080132E00A4266D /* HalfRoundedButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2970E7092080132E00A4266D /* HalfRoundedButton.swift */; };
+		2970E70C2080150700A4266D /* TotalPriceFeatureViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2970E70B2080150700A4266D /* TotalPriceFeatureViewModel.swift */; };
 		2999DDAA207AAD0C00D7A792 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2999DDA9207AAD0C00D7A792 /* AppDelegate.swift */; };
 		2999DDAF207AAD0D00D7A792 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 2999DDAD207AAD0D00D7A792 /* Main.storyboard */; };
 		2999DDB1207AAD0E00D7A792 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 2999DDB0207AAD0E00D7A792 /* Assets.xcassets */; };
@@ -84,6 +88,10 @@
 		293D9E23207D61C4005E0DA7 /* SelectedProductListHeaderSectionController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SelectedProductListHeaderSectionController.swift; sourceTree = "<group>"; };
 		293D9E25207D6285005E0DA7 /* HorizontalHeaderSelectedProductCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HorizontalHeaderSelectedProductCell.swift; sourceTree = "<group>"; };
 		293D9E26207D6285005E0DA7 /* HorizontalHeaderSelectedProductCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = HorizontalHeaderSelectedProductCell.xib; sourceTree = "<group>"; };
+		2970E704208003DD00A4266D /* RoundedView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RoundedView.swift; sourceTree = "<group>"; };
+		2970E707208012E700A4266D /* RoundedButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RoundedButton.swift; sourceTree = "<group>"; };
+		2970E7092080132E00A4266D /* HalfRoundedButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HalfRoundedButton.swift; sourceTree = "<group>"; };
+		2970E70B2080150700A4266D /* TotalPriceFeatureViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TotalPriceFeatureViewModel.swift; sourceTree = "<group>"; };
 		2999DDA6207AAD0C00D7A792 /* testTask.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = testTask.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		2999DDA9207AAD0C00D7A792 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		2999DDAE207AAD0D00D7A792 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
@@ -217,6 +225,23 @@
 			path = SelectedProductCell;
 			sourceTree = "<group>";
 		};
+		2970E703208003B900A4266D /* View */ = {
+			isa = PBXGroup;
+			children = (
+				2970E704208003DD00A4266D /* RoundedView.swift */,
+			);
+			path = View;
+			sourceTree = "<group>";
+		};
+		2970E706208012BC00A4266D /* Button */ = {
+			isa = PBXGroup;
+			children = (
+				2970E707208012E700A4266D /* RoundedButton.swift */,
+				2970E7092080132E00A4266D /* HalfRoundedButton.swift */,
+			);
+			path = Button;
+			sourceTree = "<group>";
+		};
 		2999DD9D207AAD0C00D7A792 = {
 			isa = PBXGroup;
 			children = (
@@ -308,8 +333,10 @@
 		2999DDD4207AB7E200D7A792 /* ReusableViews */ = {
 			isa = PBXGroup;
 			children = (
-				293D9E02207B9BFA005E0DA7 /* ImageView */,
 				293D9DF0207B6CCC005E0DA7 /* Cells */,
+				2970E706208012BC00A4266D /* Button */,
+				2970E703208003B900A4266D /* View */,
+				293D9E02207B9BFA005E0DA7 /* ImageView */,
 				293D9DFC207B8AD0005E0DA7 /* EmptyViews */,
 			);
 			path = ReusableViews;
@@ -336,6 +363,7 @@
 				293D9E21207D5ECE005E0DA7 /* SelectedProductListHeaderViewModel.swift */,
 				29E36BF6207EBB0600A6EF26 /* FeatureViewModel.swift */,
 				29E36BF8207EC06400A6EF26 /* FeatureListViewModel.swift */,
+				2970E70B2080150700A4266D /* TotalPriceFeatureViewModel.swift */,
 			);
 			path = ViewModel;
 			sourceTree = "<group>";
@@ -529,6 +557,7 @@
 			files = (
 				29E36BF9207EC06400A6EF26 /* FeatureListViewModel.swift in Sources */,
 				293D9E05207B9C2A005E0DA7 /* RoundedImageView.swift in Sources */,
+				2970E70C2080150700A4266D /* TotalPriceFeatureViewModel.swift in Sources */,
 				2999DDD7207AB94600D7A792 /* String+Extensions.swift in Sources */,
 				2999DDE1207AB9D500D7A792 /* Styles.swift in Sources */,
 				293D9DFB207B7D5D005E0DA7 /* ProductsViewController.swift in Sources */,
@@ -551,12 +580,15 @@
 				293D9E22207D5ECE005E0DA7 /* SelectedProductListHeaderViewModel.swift in Sources */,
 				293D9DF9207B7B4A005E0DA7 /* ProductListViewModel.swift in Sources */,
 				2999DDE7207AC6F000D7A792 /* ProductModel.swift in Sources */,
+				2970E705208003DD00A4266D /* RoundedView.swift in Sources */,
 				293D9DFF207B8B5E005E0DA7 /* ProductsEmptyView.swift in Sources */,
 				293D9DED207B6428005E0DA7 /* NSAttributedString+Extension.swift in Sources */,
 				293D9DF6207B6D5A005E0DA7 /* ProductCell.swift in Sources */,
+				2970E708208012E700A4266D /* RoundedButton.swift in Sources */,
 				2999DDEA207AC90500D7A792 /* ImageSorces.swift in Sources */,
 				293D9E09207C222F005E0DA7 /* SelectedProductsSectionController.swift in Sources */,
 				29E36BFB207EC46100A6EF26 /* FeaturesSectionController.swift in Sources */,
+				2970E70A2080132E00A4266D /* HalfRoundedButton.swift in Sources */,
 				2999DDDB207AB97300D7A792 /* UIColor+Extensions.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

@@ -17,7 +17,7 @@ class HorizontalSelectedProductCell: UICollectionViewCell {
         let collectionView =  UICollectionView(frame: .zero,
                                                collectionViewLayout: layout)
 
-        collectionView.backgroundColor = Color.SharedColors.lightGray
+        collectionView.backgroundColor = Color.SharedColors.featureBackground
         collectionView.alwaysBounceVertical = false
         collectionView.alwaysBounceHorizontal = true
         self.contentView.addSubview(collectionView)

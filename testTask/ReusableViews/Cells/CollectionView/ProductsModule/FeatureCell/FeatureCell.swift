@@ -10,19 +10,54 @@ import UIKit
 
 class FeatureCell: UICollectionViewCell {
     // MARK: - Outlets
-    @IBOutlet weak var actualPriceLabel: UILabel!
-    @IBOutlet weak var oldPriceLabel: UILabel!
+    @IBOutlet private weak var actualPriceLabel: UILabel!
+    @IBOutlet private weak var oldPriceLabel: UILabel!
+    @IBOutlet private weak var descriptionLabel: UILabel!
+    @IBOutlet private weak var amountLabel: UILabel!
+    @IBOutlet private weak var increaseAmounButton: UIButton!
+    @IBOutlet private weak var decreaseAmountButton: UIButton!
     
     // MARK: - Private properties
-    private var viewModel: FeatureViewModel!
+    private var viewModel: FeatureViewModel?
+    private let minAmount: Int = 0
+    private let maxAmount: Int = 50
+    private var currentAmount: Int = 0 {
+        didSet {
+            increaseAmounButton.isEnabled = currentAmount < maxAmount
+            decreaseAmountButton.isEnabled = currentAmount > minAmount
+            amountLabel.attributedText = String(format: "%i", currentAmount).styled(with: .regular)
+        }
+    }
+    
+    // MARK: - Actions
+    @IBAction func increaseButtonAction(_ sender: UIButton) {
+        currentAmount += 1
+        viewModel?.amount = currentAmount
+        viewModel?.incrementAmount()
+    }
+    
+    @IBAction func decreaseButtonAction(_ sender: UIButton) {
+        currentAmount -= 1
+        viewModel?.amount = currentAmount
+        viewModel?.decrementAmount()
+    }
 
     // MARK: - Public functions
     func setup(with viewModel: FeatureViewModel) {
         self.viewModel = viewModel
-        self.viewModel.dataUpdater = self
+        self.viewModel?.dataUpdater = self
         
+        currentAmount = viewModel.amount
         actualPriceLabel.attributedText = "\(viewModel.featureActualPriceString) \(viewModel.featureCurrencyString)".styled(with: .regular)
         oldPriceLabel.attributedText = "\(viewModel.featureOldPriceString) \(viewModel.featureCurrencyString)".styled(with: .regular)
+        descriptionLabel.attributedText = viewModel.featureDescriptionString.styled(with: .regular)
+    }
+    
+    override func prepareForReuse() {
+        super.prepareForReuse()
+        
+        viewModel = nil
+        currentAmount = 0
     }
 }
 

@@ -17,6 +17,8 @@ protocol FeatureListViewModelProtocol: class {
 
 protocol FeatureListViewModelDelegate: class {
     func featureListViewModelDidUpdate(_ listViewModel: FeatureListViewModel, andWithViewModel viewModel: FeatureViewModel)
+    func featureWasIncrease(_ viewModel: FeatureViewModel)
+    func featureWasDecrease(_ viewModel: FeatureViewModel)
 }
 
 class FeatureListViewModel {
@@ -55,6 +57,14 @@ extension FeatureListViewModel: FeatureListViewModelProtocol {
 
 // MARK: - FeatureViewModelDelegate
 extension FeatureListViewModel: FeatureViewModelDelegate {
+    func featureWasIncrease(_ viewModel: FeatureViewModel) {
+        delegate?.featureWasIncrease(viewModel)
+    }
+    
+    func featureWasDecrease(_ viewModel: FeatureViewModel) {
+        delegate?.featureWasDecrease(viewModel)
+    }
+    
     func featureViewModelDidUpdate(_ viewModel: FeatureViewModel) {
         delegate?.featureListViewModelDidUpdate(self, andWithViewModel: viewModel)
     }

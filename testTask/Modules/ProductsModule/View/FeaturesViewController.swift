@@ -12,6 +12,9 @@ class FeaturesViewController: UIViewController {
 
     // MARK: - Outlets
     @IBOutlet private weak var collectionView: UICollectionView!
+    @IBOutlet private weak var totalLabel: UILabel!
+    @IBOutlet private weak var totalPriceLabel: UILabel!
+    @IBOutlet private weak var payButton: UIButton!
     
     // MARK: - Public proreties
     var selectedProductListViewModel: SelectedProductListViewModel!
@@ -21,14 +24,17 @@ class FeaturesViewController: UIViewController {
     fileprivate var adapter: ListAdapter!
     fileprivate var featureListViewModel: FeatureListViewModel!
     fileprivate let horizontalSectionController = HorizontalSelectedProductsSectionController()
+    fileprivate let totalPriceViewModel = TotalPriceFeatureViewModel()
     
     override func viewDidLoad() {
         super.viewDidLoad()
         
         title = "Add features"
-        collectionView.backgroundColor = Color.SharedColors.lightGray
+        totalLabel.attributedText = "Total".styled(with: .regular)
+        collectionView.backgroundColor = Color.SharedColors.featureBackground
         selectedProductListViewModel.delegate = self
         selectedProductListViewModel.dataUpdater = horizontalSectionController
+        totalPriceViewModel.dataUpdater = self
         setupFeatureListViewModel()
         setupAdapter()
     }
@@ -37,6 +43,15 @@ class FeaturesViewController: UIViewController {
         super.viewWillAppear(animated)
         
         updateAdapter()
+    }
+    
+    // MARK: - Actions
+    @IBAction func payButtonAction(_ sender: UIButton) {
+        let alert = UIAlertController(title: "Hello", message: "You need to pay \(totalPriceViewModel.totalPrice) \(totalPriceViewModel.currency)", preferredStyle: .alert)
+        alert.addAction(UIAlertAction(title: "No", style: .cancel, handler: nil))
+        alert.addAction(UIAlertAction(title: "Ok", style: .default, handler: nil))
+        
+        present(alert, animated: true, completion: nil)
     }
     
     // MARK: - Private functions
@@ -59,7 +74,26 @@ class FeaturesViewController: UIViewController {
     }
 }
 
+// MARK: - TotalPriceFeatureViewModelDataUpdater
+extension FeaturesViewController: TotalPriceFeatureViewModelDataUpdater {
+    func totalPriceAndCurrencyWasUpdated(_ viewModel: TotalPriceFeatureViewModel) {
+        payButton.isEnabled = viewModel.totalPrice != 0
+        totalPriceLabel.attributedText = String(format: "%i %@", viewModel.totalPrice, viewModel.currency).styled(with: .bold)
+    }
+}
+
+// MARK: - FeatureListViewModelDelegate
 extension FeaturesViewController: FeatureListViewModelDelegate {
+    func featureWasIncrease(_ viewModel: FeatureViewModel) {
+        totalPriceViewModel.increasePrice(viewModel.featureActualPriceInt)
+        totalPriceViewModel.updateCurrency(viewModel.featureCurrencyString)
+    }
+    
+    func featureWasDecrease(_ viewModel: FeatureViewModel) {
+        totalPriceViewModel.decreasePrice(viewModel.featureActualPriceInt)
+        totalPriceViewModel.updateCurrency(viewModel.featureCurrencyString)
+    }
+    
     func featureListViewModelDidUpdate(_ listViewModel: FeatureListViewModel, andWithViewModel viewModel: FeatureViewModel) {
         updateAdapter()
     }

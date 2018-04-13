@@ -10,17 +10,23 @@ import IGListKit
 
 protocol FeatureViewModelProtocol: class {
     var uniqueId: String { get }
-    var amount: Int { get }
+    var amount: Int { set get }
     var featureCurrencyString: String { get }
     var featureActualPriceString: String { get }
+    var featureActualPriceInt: Int { get }
     var featureOldPriceString: String { get }
     var featureDescriptionString: String { get }
+    
+    func incrementAmount()
+    func decrementAmount()
     
     func getContainerSize(_ contextWidth: CGFloat) -> CGSize
 }
 
 protocol FeatureViewModelDelegate: class {
     func featureViewModelDidUpdate(_ viewModel: FeatureViewModel)
+    func featureWasIncrease(_ viewModel: FeatureViewModel)
+    func featureWasDecrease(_ viewModel: FeatureViewModel)
 }
 
 protocol FeatureViewModelDataUpdater: class {
@@ -46,12 +52,21 @@ class FeatureViewModel {
 
 // MARK: - FeatureViewModelProtocol
 extension FeatureViewModel: FeatureViewModelProtocol {
-    var uniqueId: String {
-        return unique
+    var amount: Int {
+        get {
+            return featureAmount
+        }
+        set {
+            featureAmount = newValue
+        }
     }
     
-    var amount: Int {
-        return featureAmount
+    var featureActualPriceInt: Int {
+        return feature.actualPrice
+    }
+    
+    var uniqueId: String {
+        return unique
     }
     
     var featureCurrencyString: String {
@@ -70,13 +85,20 @@ extension FeatureViewModel: FeatureViewModelProtocol {
         return feature.featureDescription
     }
     
+    func incrementAmount() {
+        delegate?.featureWasIncrease(self)
+    }
+    func decrementAmount() {
+        delegate?.featureWasDecrease(self)
+    }
+    
     func getContainerSize(_ contextWidth: CGFloat) -> CGSize {
-        let width: CGFloat = contextWidth - 20
+        let width: CGFloat = contextWidth - 40
         let actualPriceHeight = "\(featureActualPriceString) \(featureCurrencyString)".styled(with: .regular).height(withWidth: width, andNumberOfLines: 1)
         let oldPriceHeight = "\(featureOldPriceString) \(featureCurrencyString)".styled(with: .regular).height(withWidth: width, andNumberOfLines: 1)
         let featureDescriptionHeight = featureDescriptionString.styled(with: .regular).height(withWidth: width, andNumberOfLines: 0)
         
-        let totalHeight = actualPriceHeight + oldPriceHeight + featureDescriptionHeight + 90
+        let totalHeight = actualPriceHeight + oldPriceHeight + featureDescriptionHeight + 112
         
         return CGSize(width: contextWidth, height: totalHeight)
     }

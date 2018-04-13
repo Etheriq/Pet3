@@ -11,6 +11,11 @@ import IGListKit
 class FeaturesSectionController: ListSectionController {
     // MARK: - Private properties
     fileprivate var viewModel: FeatureListViewModel!
+    
+    override init() {
+        super.init()
+        inset = UIEdgeInsets(top: 0, left: 0, bottom: 10, right: 0)
+    }
 }
 
 extension FeaturesSectionController {

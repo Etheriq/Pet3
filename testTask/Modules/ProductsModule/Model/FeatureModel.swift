@@ -20,7 +20,7 @@ extension FeatureModel {
     static func randomFeature() -> FeatureModel {
         let actualPrice: Int = Randoms.randomInt(10, 250)
         let oldPrice: Float = Float(actualPrice) * Randoms.randomFloat(1.5, 3.5)
-        let featureDescription = Randoms.randomFakeConversation()
+        let featureDescription = Randoms.randomFakeConversation() + "\n" + Randoms.randomFakeConversation() + "\n" + Randoms.randomFakeConversation()
         
         return FeatureModel(actualPrice: actualPrice,
                             oldPrice: Int(oldPrice),
